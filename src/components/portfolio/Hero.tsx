@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
-import { HeroScene } from "./HeroScene";
 import ahmed from "@/assets/ahmed.png";
 
 export const Hero = () => {
@@ -10,9 +9,8 @@ export const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden"
     >
-      {/* Background layers */}
-      <div className="absolute inset-0 grid-pattern opacity-40" />
-      <div className="absolute inset-0 bg-radial-glow" />
+      {/* Radial gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-950/20 to-black pointer-events-none" />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -65,34 +63,33 @@ export const Hero = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT — Portrait + Three.js scene */}
+          {/* RIGHT — Portrait */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            className="relative order-1 lg:order-2 mx-auto w-full max-w-[480px] aspect-square"
+            className="relative order-1 p-10 lg:order-2 mx-auto w-full max-w-[350px] aspect-square"
           >
-            {/* Three.js scene */}
-            <HeroScene />
+            {/* Portrait image with circular mask */}
+            <div className="absolute inset-0 rounded-full overflow-hidden">
+              <motion.img
+                src={ahmed}
+                alt="Ahmed Swabah"
+                className="w-full h-full object-cover object-bottom"
+                animate={{ y: [0, -2, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </div>
 
-            {/* Glow halo behind portrait */}
-            <div className="absolute inset-[12%] rounded-full bg-gradient-to-br from-primary/40 via-primary-glow/20 to-transparent blur-3xl pointer-events-none" />
+            {/* Soft glow behind portrait */}
+            <div className="absolute inset-[8%] rounded-full bg-gradient-to-br from-primary/30 via-primary-glow/15 to-transparent blur-3xl pointer-events-none" />
 
-            {/* Portrait — floats subtly */}
-            <motion.img
-              src={ahmed}
-              alt="Ahmed Swabah"
-              className="absolute inset-0 w-full h-full object-contain object-bottom drop-shadow-[0_30px_60px_hsl(265_89%_50%/0.45)] z-10"
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Floor reflection / shadow */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/5 h-6 bg-primary/40 blur-2xl rounded-full" />
+            {/* Thin ring */}
+            <div className="absolute inset-0 rounded-full border border-primary/30" />
           </motion.div>
         </div>
       </div>

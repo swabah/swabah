@@ -17,7 +17,7 @@ export const Section = ({ id, eyebrow, title, description, children }: Props) =>
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
-        className="max-w-2xl mb-14"
+        className="max-w-xl mb-14"
       >
         <p className="font-mono text-xs text-primary uppercase tracking-widest mb-3">{eyebrow}</p>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">{title}</h2>

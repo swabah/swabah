@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 const links = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
+  { href: "/projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -25,7 +25,7 @@ export const Navbar = () => {
       )}
     >
       <nav className="container flex items-center justify-between h-16">
-        <a href="#home" className="font-mono text-sm font-semibold tracking-tight">
+        <a href="/" className="font-mono text-sm font-semibold tracking-tight">
           <span className="text-primary">{"</"}</span>swabah<span className="text-primary">{">"}</span>
         </a>
         <ul className="hidden md:flex items-center gap-8">

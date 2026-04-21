@@ -173,7 +173,7 @@ const ProjectCard = ({ p, i }: { p: Project; i: number }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-50px" }}
     transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
-    className="group relative flex flex-col rounded-2xl border border-border bg-card/50 overflow-hidden hover:border-primary/40 transition-all hover:shadow-glow"
+    className="group relative flex flex-col rounded-2xl border border-border bg-card/50 overflow-hidden hover:border-primary/40 transition-all"
   >
     <div className="relative aspect-[16/10] overflow-hidden border-b border-border">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary-glow/10" />
