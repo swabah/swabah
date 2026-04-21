@@ -8,13 +8,21 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { Mail, Github, Linkedin, MapPin, Send } from "lucide-react";
 
+const contactItems = [
+  { icon: Mail, label: "Email", value: "ahmedswabah.dev@gmail.com", href: "mailto:ahmedswabah.dev@gmail.com" },
+  { icon: Github, label: "GitHub", value: "@swabah", href: "https://github.com/swabah" },
+  { icon: Linkedin, label: "LinkedIn", value: "sw-abah", href: "https://www.linkedin.com/in/sw-abah/" },
+  { icon: MapPin, label: "Location", value: "Kozhikode, Kerala" },
+] as const;
+
 export const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const { name, email, message } = form;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
     window.location.href = `mailto:ahmedswabah.dev@gmail.com?subject=${subject}&body=${body}`;
     toast({ title: "Opening your email client…", description: "Thanks for reaching out!" });
   };
@@ -34,12 +42,7 @@ export const Contact = () => {
           transition={{ duration: 0.5 }}
           className="lg:col-span-2 space-y-3"
         >
-          {[
-            { icon: Mail, label: "Email", value: "ahmedswabah.dev@gmail.com", href: "mailto:ahmedswabah.dev@gmail.com" },
-            { icon: Github, label: "GitHub", value: "@swabah", href: "https://github.com/swabah" },
-            { icon: Linkedin, label: "LinkedIn", value: "sw-abah", href: "https://www.linkedin.com/in/sw-abah/" },
-            { icon: MapPin, label: "Location", value: "Kozhikode, Kerala" },
-          ].map(({ icon: Icon, label, value, href }) => {
+          {contactItems.map(({ icon: Icon, label, value, href }: any) => {
             const inner = (
               <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card/50 hover:border-primary/40 hover:bg-card transition-all">
                 <span className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 inline-flex items-center justify-center">
@@ -75,8 +78,8 @@ export const Contact = () => {
               <Input
                 id="name"
                 required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                value={name}
+                onChange={({ target: { value } }) => setForm({ ...form, name: value })}
                 placeholder="Your name"
                 className="bg-background/60 border-border focus-visible:ring-primary"
               />
@@ -87,8 +90,8 @@ export const Contact = () => {
                 id="email"
                 type="email"
                 required
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                value={email}
+                onChange={({ target: { value } }) => setForm({ ...form, email: value })}
                 placeholder="you@example.com"
                 className="bg-background/60 border-border focus-visible:ring-primary"
               />
@@ -100,8 +103,8 @@ export const Contact = () => {
               id="message"
               required
               rows={6}
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              value={message}
+              onChange={({ target: { value } }) => setForm({ ...form, message: value })}
               placeholder="Tell me about your project, idea, or role…"
               className="bg-background/60 border-border focus-visible:ring-primary resize-none"
             />

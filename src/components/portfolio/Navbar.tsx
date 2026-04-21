@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
