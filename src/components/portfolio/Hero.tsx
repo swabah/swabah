@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
 const titles = ["Full-Stack Developer", "AI Engineer", "Prompt Engineer"];
 
@@ -54,6 +54,11 @@ export const Hero = () => {
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-6 border-border hover:border-primary/50 hover:bg-primary/10">
               <a href="#contact">Contact me</a>
+            </Button>
+            <Button asChild size="lg" variant="ghost" className="rounded-full px-6 hover:bg-primary/10 hover:text-primary">
+              <a href="/Ahmed-Swabah-Resume.pdf" download>
+                <Download className="mr-2 h-4 w-4" /> Resume
+              </a>
             </Button>
 
             <div className="flex items-center gap-2 ml-2">

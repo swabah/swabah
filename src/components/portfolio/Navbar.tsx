@@ -40,12 +40,21 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <a
-          href="#contact"
-          className="text-sm font-medium px-4 py-2 rounded-full border border-border hover:border-primary/50 hover:bg-primary/10 transition-all"
-        >
-          Let's talk
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="/Ahmed-Swabah-Resume.pdf"
+            download
+            className="hidden sm:inline-flex text-sm font-medium px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all"
+          >
+            Resume
+          </a>
+          <a
+            href="#contact"
+            className="text-sm font-medium px-4 py-2 rounded-full border border-border hover:border-primary/50 hover:bg-primary/10 transition-all"
+          >
+            Let's talk
+          </a>
+        </div>
       </nav>
     </header>
   );
