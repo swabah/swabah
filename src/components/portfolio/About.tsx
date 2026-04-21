@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { MapPin, Code2, Sparkles, Cloud } from "lucide-react";
+import { PortraitScene } from "./PortraitScene";
+import ahmed from "@/assets/ahmed.png";
 
 const stats = [
   { value: "20+", label: "Projects Shipped" },
@@ -26,16 +28,23 @@ export const About = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         className="lg:col-span-2"
       >
-        <div className="relative aspect-square rounded-2xl overflow-hidden border border-border bg-card shadow-card">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-primary-glow/30" />
-          <div className="absolute inset-0 grid-pattern opacity-40" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-9xl font-bold text-gradient font-mono">AS</div>
+        <div className="group relative aspect-square rounded-2xl overflow-hidden border border-border bg-card shadow-card">
+          <div className="absolute inset-0">
+            <PortraitScene />
           </div>
-          <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 px-3 py-2 rounded-lg bg-background/70 backdrop-blur-md border border-border">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary-glow/20 pointer-events-none" />
+          <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
+          <img
+            src={ahmed}
+            alt="Ahmed Swabah portrait"
+            loading="lazy"
+            className="absolute inset-x-0 bottom-0 h-[94%] w-full object-contain object-bottom drop-shadow-[0_20px_40px_hsl(var(--primary)/0.35)] transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background/80 to-transparent pointer-events-none" />
+          <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 px-3 py-2 rounded-lg bg-background/70 backdrop-blur-md border border-border z-10">
             <MapPin className="h-4 w-4 text-primary" />
             <span className="text-sm font-mono">Kozhikode, Kerala</span>
           </div>
