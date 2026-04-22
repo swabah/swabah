@@ -10,7 +10,7 @@ export const Contact = () => {
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, margin: "-100px" }}
-				transition={{ duration: 0.8 }}
+				transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
 				className="max-w-7xl mx-auto relative"
 			>
 				{/* Animated Gradient Border Wrapper */}
@@ -38,11 +38,17 @@ export const Contact = () => {
 							</span>
 						</h2>
 
-						<p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+						<motion.p
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+							className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
+						>
 							Whether you have an ambitious project in mind, need an engineering
 							partner, or just want to chat about AI and web tech, I'm just an
 							email away.
-						</p>
+						</motion.p>
 
 						<a
 							href="mailto:ahmedswabah.dev@gmail.com"

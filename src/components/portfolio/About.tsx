@@ -16,32 +16,22 @@ export const About = () => (
 		eyebrow="About Me"
 		title="Bridging the gap between engineering and design."
 	>
-		<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-8">
+		<div className="pb-20 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-8">
 			<motion.div
-				initial={{ opacity: 0, x: -20 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.6 }}
-				className="space-y-6"
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, margin: "-100px" }}
+				transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+				className="space-y-8"
 			>
-				<p className="text-xl text-muted-foreground leading-relaxed font-medium">
-					I bridge the gap between complex engineering and elegant design,
-					building scalable solutions that drive real impact.
-				</p>
-				<p className="text-lg text-muted-foreground/80 leading-relaxed">
-					As a Full Stack Software Engineer, I specialize in the modern
-					JavaScript ecosystem. I craft clean, performant, production-ready
-					applications that not only solve real-world problems but also provide
-					delightful user experiences.
-				</p>
-				<p className="text-lg text-muted-foreground/80 leading-relaxed">
-					I also design and integrate AI-powered systems—enabling automation,
-					smarter workflows, and future-ready platforms. Whether working on a
-					fast-paced startup or an enterprise application, my focus is always on
-					delivering value.
+				<p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
+					As a Full Stack Software Engineer, I bridge the gap between complex
+					engineering and elegant design. I specialize in the modern JavaScript
+					ecosystem to build scalable, AI-powered applications that drive real
+					impact.
 				</p>
 
-				<div className="flex flex-wrap items-center gap-3 pt-4">
+				<div className="flex flex-wrap items-center gap-3">
 					<div className="flex h-10 items-center justify-center rounded-full bg-primary/10 px-4 border border-primary/20">
 						<MapPin className="mr-2 h-4 w-4 text-primary" />
 						<span className="text-sm font-semibold text-primary">
@@ -56,43 +46,30 @@ export const About = () => (
 						<span className="text-sm font-semibold">Available for work</span>
 					</div>
 				</div>
+
+				{/* Minimal Stats Row */}
+				<div className="pt-8 mt-2 border-t border-border flex flex-wrap gap-x-12 gap-y-6">
+					{stats.slice(0, 4).map((s) => (
+						<div key={s.label}>
+							<div className="text-3xl font-bold text-foreground mb-1">
+								{s.value}
+							</div>
+							<div className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">
+								{s.label}
+							</div>
+						</div>
+					))}
+				</div>
 			</motion.div>
 
 			<motion.div
-				initial={{ opacity: 0, x: 20 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.6, delay: 0.2 }}
-				className="relative"
+				initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+				whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+				viewport={{ once: true, margin: "-100px" }}
+				transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+				className="relative w-full aspect-square max-h-[500px] mx-auto flex items-center justify-center"
 			>
-				<div className="relative aspect-square max-h-[500px] mx-auto rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl flex flex-col justify-between">
-					<div className="absolute inset-0 z-0">
-						<PortraitScene />
-					</div>
-
-					{/* Gradient overlay to ensure text readability */}
-					<div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-10 pointer-events-none" />
-
-					<div className="relative z-20 grid grid-cols-2 gap-4 p-6 mt-auto">
-						{stats.map((s, i) => (
-							<motion.div
-								initial={{ opacity: 0, y: 10 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: 0.4 + i * 0.1 }}
-								key={s.label}
-								className="rounded-2xl border border-white/10 bg-background/60 backdrop-blur-md p-4 flex flex-col justify-center items-center text-center hover:bg-background/80 transition-colors"
-							>
-								<div className="text-2xl md:text-3xl font-bold text-foreground mb-1">
-									{s.value}
-								</div>
-								<div className="text-[10px] md:text-xs text-muted-foreground font-semibold uppercase tracking-wider">
-									{s.label}
-								</div>
-							</motion.div>
-						))}
-					</div>
-				</div>
+				<PortraitScene />
 			</motion.div>
 		</div>
 	</Section>

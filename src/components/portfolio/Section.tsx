@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { AnimatedText } from "./AnimatedText";
 
 interface Props {
 	id: string;
@@ -18,25 +19,28 @@ export const Section = ({
 }: Props | any) => (
 	<section id={id} className="py-24 md:py-32 relative">
 		<div className="container">
-			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, margin: "-100px" }}
-				transition={{ duration: 0.5 }}
-				className="max-w-xl mb-14"
-			>
-				<p className="font-mono text-xs text-primary uppercase tracking-widest mb-3">
-					{eyebrow}
-				</p>
-				<h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-					{title}
-				</h2>
+			<div className="max-w-xl mb-14">
+				<AnimatedText
+					text={eyebrow}
+					className="block font-mono text-xs text-primary uppercase tracking-widest mb-3"
+				/>
+				<AnimatedText
+					text={title}
+					className="block text-3xl md:text-5xl font-bold tracking-tight mb-4"
+					delay={0.1}
+				/>
 				{description && (
-					<p className="text-muted-foreground text-lg leading-relaxed">
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+						className="text-muted-foreground text-lg leading-relaxed"
+					>
 						{description}
-					</p>
+					</motion.p>
 				)}
-			</motion.div>
+			</div>
 			{children}
 		</div>
 	</section>

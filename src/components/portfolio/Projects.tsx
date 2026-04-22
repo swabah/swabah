@@ -40,7 +40,7 @@ const ProjectCard = ({ p, i }: { p: typeof projects[0]; i: number }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
+      transition={{ duration: 0.8, delay: Math.min(i * 0.1, 0.5), ease: [0.16, 1, 0.3, 1] }}
       className="group relative flex flex-col rounded-2xl border border-border bg-card/50 overflow-hidden hover:border-primary/40 transition-all h-full"
     >
       {/* Image Area - 3D Tilt Container */}

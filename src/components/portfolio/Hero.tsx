@@ -8,7 +8,7 @@ export const Hero = () => {
 	return (
 		<section
 			id="home"
-			className="relative min-h-screen bg-background overflow-hidden flex items-center"
+			className="relative min-h-screen bg-background overflow-hidden flex items-end lg:items-center pb-24 lg:pb-0"
 		>
 			<ParticleBackground />
 			{/* LEFT: Image fading into background */}
@@ -20,33 +20,37 @@ export const Hero = () => {
 				<img
 					src={swabahImg}
 					alt="Ahmed Swabah"
-					className="w-full h-full object-cover object-center lg:object-[center_20%] grayscale opacity-70"
+					className="w-full h-full object-cover object-center lg:object-[center_20%] grayscale opacity-50"
 				/>
 			</div>
 
 			{/* RIGHT: Content */}
-			<div className="container relative z-20 flex justify-end">
+			<div className="container relative z-20 flex justify-end w-full">
 				<div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-16 pt-32 lg:pt-0">
-					<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-3 flex flex-wrap items-baseline whitespace-nowrap">
+					<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground flex flex-wrap items-baseline whitespace-nowrap">
 						<AnimatedText text="SWABAH" delay={0.2} byWord={false} />
 						<motion.span
 							initial={{ opacity: 0, scale: 0 }}
 							animate={{ opacity: 1, scale: 1 }}
-							transition={{ delay: 1, type: "spring" }}
+							transition={{
+								delay: 1.2,
+								duration: 0.8,
+								ease: [0.16, 1, 0.3, 1],
+							}}
 							className="text-primary"
 						>
 							.
 						</motion.span>
 					</h1>
 
-					<div className="text-lg md:text-xl text-muted-foreground mb-8 font-medium overflow-hidden">
+					<div className="text-lg md:text-xl text-muted-foreground mb-4 font-medium overflow-hidden">
 						<AnimatedText text="Full Stack Software Engineer" delay={0.5} />
 					</div>
 
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.2 }}
+						transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
 						className="flex items-center gap-6"
 					>
 						<a

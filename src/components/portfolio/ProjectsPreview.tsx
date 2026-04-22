@@ -4,6 +4,7 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
+import { AnimatedText } from "./AnimatedText";
 
 const ProjectCard = ({ p, i }: { p: (typeof projects)[0]; i: number }) => {
 	const isEven = i % 2 === 0;
@@ -43,7 +44,7 @@ const ProjectCard = ({ p, i }: { p: (typeof projects)[0]; i: number }) => {
 			initial={{ opacity: 0, y: 40 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-100px" }}
-			transition={{ duration: 0.6, delay: 0.1 }}
+			transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
 			className={`group relative flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} rounded-2xl border border-border/50 bg-card/20 overflow-hidden hover:bg-card/40 hover:border-border transition-colors duration-500 min-h-[400px]`}
 		>
 			{/* Minimal top highlight line */}
@@ -93,9 +94,10 @@ const ProjectCard = ({ p, i }: { p: (typeof projects)[0]; i: number }) => {
 
 			{/* Content Area */}
 			<div className="flex flex-col flex-1 p-8 md:p-12 justify-center relative z-20">
-				<h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-					{p.name}
-				</h3>
+				<AnimatedText
+					text={p.name}
+					className="block text-2xl md:text-3xl font-bold mb-4 text-foreground"
+				/>
 				<p className="text-base text-muted-foreground leading-relaxed mb-6">
 					{p.description}
 				</p>

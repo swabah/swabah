@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { AnimatedText } from "./AnimatedText";
 
 const links = [
   { href: "#about", label: "About" },
@@ -10,9 +11,9 @@ const links = [
 export const Footer = () => (
   <footer className="border-t border-border py-10 mt-10">
     <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
-      <p className="text-sm text-muted-foreground font-mono">
-        © {new Date().getFullYear()} Ahmed Swabah. Crafted with care.
-      </p>
+      <div className="text-sm text-muted-foreground font-mono">
+        <AnimatedText text={`© ${new Date().getFullYear()} Ahmed Swabah. Crafted with care.`} />
+      </div>
       <ul className="flex items-center gap-6">
         {links.map((l) => (
           <li key={l.href}>

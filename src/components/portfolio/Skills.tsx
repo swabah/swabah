@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { Skills3DBackground } from "./Skills3DBackground";
+import { AnimatedText } from "./AnimatedText";
 
 const groups = [
   {
@@ -33,13 +34,13 @@ const containerVariants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: { staggerChildren: 0.1 }
+        transition: { staggerChildren: 0.15 }
     }
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
 
 export const Skills = () => (
@@ -67,7 +68,7 @@ export const Skills = () => (
           {/* Extremely minimal top highlight line instead of full glow */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
-          <h3 className="font-mono text-sm font-semibold uppercase tracking-widest text-primary mb-6 relative z-10">{g.title}</h3>
+          <AnimatedText text={g.title} className="block font-mono text-sm font-semibold uppercase tracking-widest text-primary mb-6 relative z-10" />
           
           <div className="flex flex-wrap gap-2.5 relative z-10">
             {g.items.map((s) => (
