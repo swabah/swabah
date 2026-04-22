@@ -72,10 +72,10 @@ const ProjectCard = ({ p, i }: { p: (typeof projects)[0]; i: number }) => {
 					/>
 
 					<div
-						className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none p-6"
+						className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none p-4 sm:p-6"
 						style={{ transform: "translateZ(40px)" }}
 					>
-						<span className="font-mono text-2xl sm:text-3xl md:text-5xl font-bold text-foreground/90 tracking-tight text-center group-hover:scale-105 group-hover:text-primary transition-all duration-700 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] break-words w-full px-4">
+						<span className="font-mono text-xl sm:text-3xl md:text-5xl font-bold text-foreground/90 tracking-tight text-center group-hover:scale-105 group-hover:text-primary transition-all duration-700 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] break-words w-full px-2 sm:px-4">
 							{p.name}
 						</span>
 					</div>
@@ -83,7 +83,7 @@ const ProjectCard = ({ p, i }: { p: (typeof projects)[0]; i: number }) => {
 					{/* Decorative elements */}
 					{p.featured && (
 						<span
-							className="absolute top-6 left-6 lg:top-12 lg:left-12 z-30 text-[10px] sm:text-xs font-mono uppercase tracking-widest px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-primary/50 text-primary shadow-xl"
+							className="absolute top-4 left-4 lg:top-12 lg:left-12 z-30 text-[9px] sm:text-xs font-mono uppercase tracking-widest px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-primary/50 text-primary shadow-xl"
 							style={{ transform: "translateZ(30px)" }}
 						>
 							Featured
@@ -93,35 +93,35 @@ const ProjectCard = ({ p, i }: { p: (typeof projects)[0]; i: number }) => {
 			</div>
 
 			{/* Content Area */}
-			<div className="flex flex-col flex-1 p-6 sm:p-8 md:p-12 justify-center relative z-20">
+			<div className="flex flex-col flex-1 p-5 sm:p-8 md:p-12 justify-center relative z-20">
 				<AnimatedText
 					text={p.name}
-					className="block text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-foreground"
+					className="block text-lg sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-4 text-foreground"
 				/>
-				<p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+				<p className="text-xs sm:text-base text-muted-foreground leading-relaxed mb-5 sm:mb-6">
 					{p.description}
 				</p>
 
-				<div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+				<div className="flex flex-wrap gap-1.5 sm:gap-2 mb-5 sm:mb-8">
 					{p.tech.map((t) => (
 						<span
 							key={t}
-							className="text-[10px] sm:text-xs font-mono px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-background/50 border border-border/50 text-foreground/80 font-medium"
+							className="text-[9px] sm:text-xs font-mono px-2 py-0.5 sm:px-3 sm:py-1.5 rounded-lg bg-background/50 border border-border/50 text-foreground/80 font-medium"
 						>
 							{t}
 						</span>
 					))}
 				</div>
 
-				<div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-auto">
+				<div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-auto">
 					{p.github && (
 						<a
 							href={p.github}
 							target="_blank"
 							rel="noreferrer"
-							className="inline-flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-background/50 border border-border/50 hover:bg-secondary/80 transition-colors"
+							className="inline-flex items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-sm font-semibold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl bg-background/50 border border-border/50 hover:bg-secondary/80 transition-colors"
 						>
-							<Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> Source
+							<Github className="h-3 w-3 sm:h-4 sm:w-4" /> Source
 						</a>
 					)}
 					{p.live && (
@@ -129,18 +129,18 @@ const ProjectCard = ({ p, i }: { p: (typeof projects)[0]; i: number }) => {
 							href={p.live}
 							target="_blank"
 							rel="noreferrer"
-							className="inline-flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm transition-all"
+							className="inline-flex items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-sm font-semibold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm transition-all"
 						>
-							<ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> View Live
+							<ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" /> View Live
 						</a>
 					)}
 					{p.caseStudy && (
 						<Link
 							to={`/projects/${p.slug}`}
-							className="ml-auto text-xs sm:text-sm text-primary hover:text-primary/80 flex items-center gap-1 font-semibold group/link"
+							className="ml-auto text-[10px] sm:text-sm text-primary hover:text-primary/80 flex items-center gap-1 font-semibold group/link pt-1 sm:pt-0"
 						>
 							Case Study{" "}
-							<ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover/link:translate-x-1 transition-transform" />
+							<ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover/link:translate-x-1 transition-transform" />
 						</Link>
 					)}
 				</div>
@@ -156,7 +156,7 @@ export const ProjectsPreview = () => (
 		title="Case studies & experiments."
 		description="A selection of high-impact platforms, intelligent systems, and scalable web apps."
 	>
-		<div className="flex flex-col gap-8 sm:gap-10 mb-10 sm:mb-12 pt-4 sm:pt-6">
+		<div className="flex flex-col gap-6 sm:gap-10 mb-10 sm:mb-12 pt-4 sm:pt-6">
 			{projects.slice(0, 3).map((p, i) => (
 				<ProjectCard key={p.slug} p={p} i={i} />
 			))}
@@ -167,10 +167,10 @@ export const ProjectsPreview = () => (
 				asChild
 				size="lg"
 				variant="outline"
-				className="rounded-full px-6 sm:px-8 border-border/50 hover:border-primary/50 hover:bg-primary/10 transition-colors text-sm sm:text-base"
+				className="rounded-full px-6 sm:px-8 border-border/50 hover:border-primary/50 hover:bg-primary/10 transition-colors text-xs sm:text-base h-10 sm:h-12"
 			>
 				<Link to="/projects">
-					View Full Archive <ArrowRight className="ml-2 h-4 w-4" />
+					View Full Archive <ArrowRight className="ml-1.5 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
 				</Link>
 			</Button>
 		</div>
