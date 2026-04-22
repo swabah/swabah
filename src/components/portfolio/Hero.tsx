@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import swabahImg from "@/assets/swabah.png";
+import { ParticleBackground } from "./ParticleBackground";
+import { AnimatedText } from "./AnimatedText";
 
 export const Hero = () => {
 	return (
@@ -8,6 +10,7 @@ export const Hero = () => {
 			id="home"
 			className="relative min-h-screen bg-background overflow-hidden flex items-center"
 		>
+			<ParticleBackground />
 			{/* LEFT: Image fading into background */}
 			<div className="absolute top-0 left-0 w-full lg:w-2/3 h-full z-0">
 				{/* Fade to background on the right */}
@@ -24,23 +27,21 @@ export const Hero = () => {
 			{/* RIGHT: Content */}
 			<div className="container relative z-20 flex justify-end">
 				<div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-16 pt-32 lg:pt-0">
-					<motion.h1
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7 }}
-						className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-3"
-					>
-						Ahmed Swabah<span className="text-primary">.</span>
-					</motion.h1>
+					<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-3 flex flex-wrap items-baseline whitespace-nowrap">
+						<AnimatedText text="SWABAH" delay={0.2} byWord={false} />
+						<motion.span
+							initial={{ opacity: 0, scale: 0 }}
+							animate={{ opacity: 1, scale: 1 }}
+							transition={{ delay: 1, type: "spring" }}
+							className="text-primary"
+						>
+							.
+						</motion.span>
+					</h1>
 
-					<motion.p
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.1 }}
-						className="text-lg md:text-xl text-muted-foreground mb-8 font-medium"
-					>
-						Full Stack Software Engineer
-					</motion.p>
+					<div className="text-lg md:text-xl text-muted-foreground mb-8 font-medium overflow-hidden">
+						<AnimatedText text="Full Stack Software Engineer" delay={0.5} />
+					</div>
 
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}

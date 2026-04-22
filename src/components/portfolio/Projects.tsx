@@ -1,10 +1,40 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Section } from "./Section";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 
 const ProjectCard = ({ p, i }: { p: typeof projects[0]; i: number }) => {
+  // 3D Tilt Effect Setup
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
   const cardContent = (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -13,24 +43,43 @@ const ProjectCard = ({ p, i }: { p: typeof projects[0]; i: number }) => {
       transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
       className="group relative flex flex-col rounded-2xl border border-border bg-card/50 overflow-hidden hover:border-primary/40 transition-all h-full"
     >
-      <div className="relative aspect-[16/10] overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary-glow/10" />
-        <div className="absolute inset-0 grid-pattern opacity-50" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-mono text-2xl md:text-3xl font-bold text-foreground/80 tracking-tight px-4 text-center">
-            {p.name}
-          </span>
-        </div>
-        {p.featured && (
-          <span className="absolute top-3 left-3 text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-primary/20 border border-primary/40 text-primary">
-            Featured
-          </span>
-        )}
-        {p.caseStudy && (
-          <span className="absolute top-3 right-3 text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-secondary border border-border text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-            Case Study
-          </span>
-        )}
+      {/* Image Area - 3D Tilt Container */}
+      <div 
+        className="relative aspect-[16/10] overflow-hidden border-b border-border bg-background/50"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{ perspective: 1000 }}
+      >
+        <motion.div 
+          style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+          className="w-full h-full relative flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out"
+        >
+          {/* Cross lines pattern highlight */}
+          <div 
+            className="absolute inset-4 pointer-events-none z-0 rounded-2xl border border-white/5 bg-background/50 transition-all duration-700 opacity-40 group-hover:opacity-80"
+            style={{ 
+              transform: "translateZ(0px)",
+              backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L24 24M24 0L0 24' stroke='%238b5cf6' stroke-width='0.5' fill='none' opacity='0.4'/%3E%3C/svg%3E\")"
+            }} 
+          />
+
+          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none" style={{ transform: "translateZ(40px)" }}>
+            <span className="font-mono text-2xl md:text-3xl font-bold text-foreground/90 tracking-tight px-4 text-center group-hover:scale-105 group-hover:text-primary transition-all duration-700 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">
+              {p.name}
+            </span>
+          </div>
+
+          {p.featured && (
+            <span className="absolute top-6 left-6 text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-background/80 backdrop-blur-md border border-primary/50 text-primary shadow-xl" style={{ transform: "translateZ(30px)" }}>
+              Featured
+            </span>
+          )}
+          {p.caseStudy && (
+            <span className="absolute top-6 right-6 text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-background/80 backdrop-blur-md border border-border text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" style={{ transform: "translateZ(30px)" }}>
+              Case Study
+            </span>
+          )}
+        </motion.div>
       </div>
 
       <div className="flex flex-col flex-1 p-6">

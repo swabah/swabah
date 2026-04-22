@@ -1,87 +1,99 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
-import { MapPin, Code2, Sparkles, Cloud } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { PortraitScene } from "./PortraitScene";
 
 const stats = [
-  { value: "20+", label: "Projects Shipped" },
-  { value: "3+", label: "Years Building" },
-  { value: "AI", label: "First Mindset" },
-  { value: "∞", label: "Curiosity" },
-];
-
-const highlights = [
-  { icon: Code2, text: "Next.js, Node.js, Express, React, Bun, TailwindCSS" },
-  { icon: Sparkles, text: "AI integration with Hugging Face, Ollama & prompt engineering" },
-  { icon: Cloud, text: "AWS, Docker, Prisma, Supabase, Firebase, MongoDB, MySQL" },
+	{ value: "20+", label: "Projects Shipped" },
+	{ value: "3+", label: "Years Experience" },
+	{ value: "AI", label: "First Mindset" },
+	{ value: "∞", label: "Curiosity" },
 ];
 
 export const About = () => (
-  <Section
-    id="about"
-    eyebrow="About"
-    title="Engineer, builder, problem solver."
-  >
-    <div className="grid lg:grid-cols-5 gap-10 items-start">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="lg:col-span-2"
-      >
-        <div className="group relative aspect-square rounded-2xl overflow-hidden border border-border bg-card shadow-card">
-          <div className="absolute inset-0">
-            <PortraitScene />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary-glow/20 pointer-events-none" />
-          <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
-          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background/80 to-transparent pointer-events-none" />
-          <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 px-3 py-2 rounded-lg bg-background/70 backdrop-blur-md border border-border z-10">
-            <MapPin className="h-4 w-4 text-primary" />
-            <span className="text-sm font-mono">Kozhikode, Kerala</span>
-          </div>
-        </div>
-      </motion.div>
+	<Section
+		id="about"
+		eyebrow="About Me"
+		title="Bridging the gap between engineering and design."
+	>
+		<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-8">
+			<motion.div
+				initial={{ opacity: 0, x: -20 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.6 }}
+				className="space-y-6"
+			>
+				<p className="text-xl text-muted-foreground leading-relaxed font-medium">
+					I bridge the gap between complex engineering and elegant design,
+					building scalable solutions that drive real impact.
+				</p>
+				<p className="text-lg text-muted-foreground/80 leading-relaxed">
+					As a Full Stack Software Engineer, I specialize in the modern
+					JavaScript ecosystem. I craft clean, performant, production-ready
+					applications that not only solve real-world problems but also provide
+					delightful user experiences.
+				</p>
+				<p className="text-lg text-muted-foreground/80 leading-relaxed">
+					I also design and integrate AI-powered systems—enabling automation,
+					smarter workflows, and future-ready platforms. Whether working on a
+					fast-paced startup or an enterprise application, my focus is always on
+					delivering value.
+				</p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="lg:col-span-3 space-y-6"
-      >
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          I'm a Full-Stack & AI Developer focused on building scalable, intelligent, and user-centered
-          web applications that solve real-world problems. I specialize in modern JavaScript ecosystems
-          and craft clean, performant, production-ready solutions.
-        </p>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          On the AI side, I design and integrate AI-powered systems — enabling automation, smarter
-          workflows, and enhanced user experiences. Actively building future-ready platforms, AI
-          products, and scalable startups.
-        </p>
+				<div className="flex flex-wrap items-center gap-3 pt-4">
+					<div className="flex h-10 items-center justify-center rounded-full bg-primary/10 px-4 border border-primary/20">
+						<MapPin className="mr-2 h-4 w-4 text-primary" />
+						<span className="text-sm font-semibold text-primary">
+							Kozhikode, Kerala
+						</span>
+					</div>
+					<div className="flex h-10 items-center justify-center rounded-full bg-white/5 px-4 border border-white/10">
+						<span className="relative flex h-2 w-2 mr-2">
+							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+							<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+						</span>
+						<span className="text-sm font-semibold">Available for work</span>
+					</div>
+				</div>
+			</motion.div>
 
-        <ul className="space-y-3 pt-2">
-          {highlights.map(({ icon: Icon, text }) => (
-            <li key={text} className="flex items-start gap-3 text-sm">
-              <span className="mt-0.5 h-7 w-7 rounded-md bg-primary/10 border border-primary/20 inline-flex items-center justify-center shrink-0">
-                <Icon className="h-3.5 w-3.5 text-primary" />
-              </span>
-              <span className="text-muted-foreground pt-0.5">{text}</span>
-            </li>
-          ))}
-        </ul>
+			<motion.div
+				initial={{ opacity: 0, x: 20 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.6, delay: 0.2 }}
+				className="relative"
+			>
+				<div className="relative aspect-square max-h-[500px] mx-auto rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl flex flex-col justify-between">
+					<div className="absolute inset-0 z-0">
+						<PortraitScene />
+					</div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-6">
-          {stats.map((s) => (
-            <div key={s.label} className="rounded-xl border border-border bg-card/50 p-4">
-              <div className="text-2xl font-bold text-gradient">{s.value}</div>
-              <div className="text-xs text-muted-foreground font-mono mt-1">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
-  </Section>
+					{/* Gradient overlay to ensure text readability */}
+					<div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-10 pointer-events-none" />
+
+					<div className="relative z-20 grid grid-cols-2 gap-4 p-6 mt-auto">
+						{stats.map((s, i) => (
+							<motion.div
+								initial={{ opacity: 0, y: 10 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: 0.4 + i * 0.1 }}
+								key={s.label}
+								className="rounded-2xl border border-white/10 bg-background/60 backdrop-blur-md p-4 flex flex-col justify-center items-center text-center hover:bg-background/80 transition-colors"
+							>
+								<div className="text-2xl md:text-3xl font-bold text-foreground mb-1">
+									{s.value}
+								</div>
+								<div className="text-[10px] md:text-xs text-muted-foreground font-semibold uppercase tracking-wider">
+									{s.label}
+								</div>
+							</motion.div>
+						))}
+					</div>
+				</div>
+			</motion.div>
+		</div>
+	</Section>
 );
