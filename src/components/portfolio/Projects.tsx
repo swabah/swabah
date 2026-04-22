@@ -63,31 +63,31 @@ const ProjectCard = ({ p, i }: { p: typeof projects[0]; i: number }) => {
             }} 
           />
 
-          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none" style={{ transform: "translateZ(40px)" }}>
-            <span className="font-mono text-2xl md:text-3xl font-bold text-foreground/90 tracking-tight px-4 text-center group-hover:scale-105 group-hover:text-primary transition-all duration-700 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">
+          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none p-4" style={{ transform: "translateZ(40px)" }}>
+            <span className="font-mono text-xl sm:text-2xl md:text-3xl font-bold text-foreground/90 tracking-tight text-center group-hover:scale-105 group-hover:text-primary transition-all duration-700 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] break-words w-full">
               {p.name}
             </span>
           </div>
 
           {p.featured && (
-            <span className="absolute top-6 left-6 text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-background/80 backdrop-blur-md border border-primary/50 text-primary shadow-xl" style={{ transform: "translateZ(30px)" }}>
+            <span className="absolute top-4 left-4 sm:top-6 sm:left-6 text-[9px] sm:text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-background/80 backdrop-blur-md border border-primary/50 text-primary shadow-xl" style={{ transform: "translateZ(30px)" }}>
               Featured
             </span>
           )}
           {p.caseStudy && (
-            <span className="absolute top-6 right-6 text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-background/80 backdrop-blur-md border border-border text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" style={{ transform: "translateZ(30px)" }}>
+            <span className="absolute top-4 right-4 sm:top-6 sm:right-6 text-[9px] sm:text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md bg-background/80 backdrop-blur-md border border-border text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" style={{ transform: "translateZ(30px)" }}>
               Case Study
             </span>
           )}
         </motion.div>
       </div>
 
-      <div className="flex flex-col flex-1 p-6">
-        <h3 className="text-lg font-semibold mb-2">{p.name}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{p.description}</p>
+      <div className="flex flex-col flex-1 p-5 sm:p-6">
+        <h3 className="text-base sm:text-lg font-semibold mb-2">{p.name}</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{p.description}</p>
         <div className="flex flex-wrap gap-1.5 mb-5">
           {p.tech.map((t) => (
-            <span key={t} className="text-[10px] font-mono px-2 py-0.5 rounded bg-secondary border border-border text-muted-foreground">
+            <span key={t} className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 sm:py-1 rounded bg-secondary border border-border text-muted-foreground">
               {t}
             </span>
           ))}
@@ -99,9 +99,9 @@ const ProjectCard = ({ p, i }: { p: typeof projects[0]; i: number }) => {
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md border border-border hover:border-primary/50 hover:bg-primary/10 transition-all"
+              className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-medium px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md border border-border hover:border-primary/50 hover:bg-primary/10 transition-all"
             >
-              <Github className="h-3.5 w-3.5" /> Code
+              <Github className="h-3 w-3 sm:h-3.5 sm:w-3.5" /> Code
             </a>
           )}
           {p.live && (
@@ -110,13 +110,13 @@ const ProjectCard = ({ p, i }: { p: typeof projects[0]; i: number }) => {
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-primary/15 border border-primary/30 text-primary hover:bg-primary/25 transition-all"
+              className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-medium px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md bg-primary/15 border border-primary/30 text-primary hover:bg-primary/25 transition-all"
             >
-              <ExternalLink className="h-3.5 w-3.5" /> Live
+              <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5" /> Live
             </a>
           )}
           {p.caseStudy && (
-            <span className="ml-auto text-xs text-primary flex items-center gap-1 font-medium">
+            <span className="ml-auto text-[11px] sm:text-xs text-primary flex items-center gap-1 font-medium group-hover:underline">
               View Case Study <ArrowRight className="h-3 w-3" />
             </span>
           )}
@@ -139,7 +139,7 @@ export const Projects = () => (
     title="Selected projects."
     description="A snapshot of platforms, AI products, and experiments I've built — from MVPs to production."
   >
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 auto-rows-fr">
       {projects.map((p, i) => (
         <ProjectCard key={p.slug} p={p} i={i} />
       ))}

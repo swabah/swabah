@@ -8,7 +8,7 @@ export const Hero = () => {
 	return (
 		<section
 			id="home"
-			className="relative min-h-screen bg-background overflow-hidden flex items-end lg:items-center pb-24 lg:pb-0"
+			className="relative min-h-screen bg-background overflow-hidden flex items-end lg:items-center pb-36 lg:pb-0"
 		>
 			<ParticleBackground />
 			{/* LEFT: Image fading into background */}
