@@ -17,26 +17,13 @@ const socialLinks = [
 		icon: Linkedin,
 		label: "LinkedIn",
 	},
-	{ href: "https://x.com/swabah", label: "X" }, // Added X as seen in image
-	{ href: "https://instagram.com/swabah", label: "Instagram" }, // Added Instagram as seen in image
+	{ href: "https://x.com/swabah", label: "X" }, 
+	{ href: "https://instagram.com/swabah", label: "Instagram" }, 
 	{ href: "mailto:ahmedswabah.dev@gmail.com", icon: Mail, label: "Email" },
 ];
 
 export const Footer = () => (
 	<footer className="pt-24 pb-12 mt-20 border-t border-border/30 bg-background relative overflow-hidden flex flex-col items-center">
-		{/* Giant Text - Positioned Absolutely Behind Everything */}
-		<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] pointer-events-none select-none overflow-hidden flex items-center justify-center -z-0">
-			<motion.h2
-				initial={{ opacity: 0, scale: 0.8 }}
-				whileInView={{ opacity: 1, scale: 1 }}
-				viewport={{ once: true }}
-				transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-				className="text-[30vw] font-black leading-none tracking-tighter text-foreground/[0.03] uppercase whitespace-nowrap"
-			>
-				swabah<span className="text-blue-500/10">.</span>
-			</motion.h2>
-		</div>
-
 		<div className="container relative z-10 w-full">
 			{/* Top Section: Links Grid */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
@@ -96,17 +83,31 @@ export const Footer = () => (
 				</div>
 			</div>
 
-			{/* Middle Section: Second Giant Text Layer (Interacting with layout) */}
-			<div className="relative mb-24 select-none w-full overflow-hidden flex justify-center">
-				<motion.h2
-					initial={{ opacity: 0, y: 50 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-					className="text-[20vw] font-black leading-[0.8] tracking-tighter text-foreground uppercase mix-blend-difference opacity-20 sm:opacity-100"
-				>
-					swabah<span className="text-blue-500">.</span>
-				</motion.h2>
+			{/* Middle Section: Stacked Giant Text Layers */}
+			<div className="relative h-[25vw] sm:h-[20vw] mb-24 select-none w-full">
+				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen flex justify-center items-center overflow-visible">
+					{/* Background Layer (Shadow) */}
+					<motion.h2 
+						initial={{ opacity: 0, scale: 0.9 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						viewport={{ once: true }}
+						transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+						className="absolute text-[25vw] font-black leading-none tracking-tighter text-foreground/[0.03] uppercase whitespace-nowrap z-0"
+					>
+						swabah<span className="text-blue-500/10">.</span>
+					</motion.h2>
+
+					{/* Foreground Layer (Main) */}
+					<motion.h2 
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+						className="relative text-[25vw] font-black leading-none tracking-tighter text-foreground uppercase mix-blend-difference z-10 whitespace-nowrap"
+					>
+						swabah<span className="text-blue-500">.</span>
+					</motion.h2>
+				</div>
 			</div>
 
 			{/* Bottom Section: Copyright & Built Info */}
