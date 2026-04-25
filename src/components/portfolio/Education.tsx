@@ -39,41 +39,33 @@ export const Education = ({ isPreview = false }: EducationProps) => {
 
 						{/* Content */}
 						<div className="w-[calc(100%-4rem)] md:w-[calc(50%-3.5rem)] group/card relative">
-							<div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-transparent rounded-3xl blur opacity-0 group-hover/card:opacity-100 transition duration-500" />
-							<div className="relative p-6 sm:p-8 rounded-3xl border border-border/50 bg-card/30 backdrop-blur-xl hover:bg-card/50 transition-all duration-500 shadow-xl overflow-hidden">
-								{/* Decorative corner */}
-								<div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -mr-12 -mt-12 blur-2xl group-hover/card:bg-primary/10 transition-colors duration-500" />
-								
-								<div className="flex flex-wrap items-center gap-3 mb-6">
-									<div className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-mono font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
+							<div className="relative p-6 sm:p-8 rounded-2xl border border-border/60 bg-card/20 backdrop-blur-sm hover:bg-card/40 hover:border-primary/40 transition-all duration-500 shadow-xl overflow-hidden">
+								<div className="flex flex-wrap items-center gap-3 mb-4">
+									<div className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-mono font-bold text-primary/80 bg-primary/5 px-2.5 py-1 rounded-md border border-primary/10">
 										<Calendar className="w-3.5 h-3.5" />
 										{item.period}
 									</div>
 									{item.location && (
-										<div className="inline-flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground font-semibold tracking-wide">
+										<div className="inline-flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground font-medium">
 											<MapPin className="w-3.5 h-3.5" />
 											{item.location}
 										</div>
 									)}
 								</div>
 
-								<h3 className="text-xl sm:text-2xl font-black mb-2 tracking-tight group-hover/card:text-primary transition-colors duration-300 leading-tight">
+								<h3 className="text-xl sm:text-2xl font-bold mb-1.5 tracking-tight group-hover/card:text-primary transition-colors duration-300 leading-tight">
 									{item.degree}
 								</h3>
 								
-								<div className="text-sm sm:text-base font-bold text-foreground/80 mb-6 flex items-center gap-2">
-									<span className="w-4 h-[1px] bg-primary/40" />
+								<div className="text-sm sm:text-base font-semibold text-foreground/70 mb-5">
 									{item.institution}
 								</div>
 
 								{item.description && (
-									<p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-medium">
+									<p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
 										{item.description}
 									</p>
 								)}
-
-								{/* Hover reveal accent */}
-								<div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent scale-x-0 group-hover/card:scale-x-100 transition-transform duration-700 ease-out" />
 							</div>
 						</div>
 					</motion.div>
