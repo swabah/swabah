@@ -1,7 +1,18 @@
-import { motion, useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
+import {
+	motion,
+	useMotionValue,
+	useSpring,
+	useMotionTemplate,
+} from "framer-motion";
 import { Section } from "./Section";
 import { educationData } from "@/data/education";
-import { GraduationCap, BookOpen, Calendar, MapPin } from "lucide-react";
+import {
+	GraduationCap,
+	BookOpen,
+	Calendar,
+	MapPin,
+	ArrowRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -24,7 +35,11 @@ const EducationCard = ({ item, index }: { item: any; index: number }) => {
 			initial={{ opacity: 0, y: 30 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-100px" }}
-			transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+			transition={{
+				duration: 0.7,
+				delay: index * 0.1,
+				ease: [0.16, 1, 0.3, 1],
+			}}
 			className="relative flex items-start md:items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
 		>
 			{/* Icon/Dot */}
@@ -37,7 +52,7 @@ const EducationCard = ({ item, index }: { item: any; index: number }) => {
 			</div>
 
 			{/* Content */}
-			<div 
+			<div
 				onMouseMove={onMouseMove}
 				className="w-[calc(100%-4rem)] md:w-[calc(50%-3.5rem)] group/card relative"
 			>
@@ -54,7 +69,7 @@ const EducationCard = ({ item, index }: { item: any; index: number }) => {
 						`,
 					}}
 				/>
-				
+
 				{/* Mouse Spotlight Border */}
 				<motion.div
 					className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover/card:opacity-100 transition duration-300 z-10"
@@ -93,7 +108,7 @@ const EducationCard = ({ item, index }: { item: any; index: number }) => {
 					<h3 className="text-xl sm:text-2xl font-bold mb-1.5 tracking-tight group-hover/card:text-primary transition-colors duration-300 leading-tight">
 						{item.degree}
 					</h3>
-					
+
 					<div className="text-sm sm:text-base font-semibold text-foreground/70 mb-5">
 						{item.institution}
 					</div>
@@ -133,9 +148,10 @@ export const Education = ({ isPreview = false }: EducationProps) => {
 					>
 						<Link
 							to="/education"
-							className="inline-flex items-center justify-center rounded-full bg-secondary px-8 py-3 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
+							className="rounded-full px-6 sm:px-8 border-border/50 hover:border-primary/50 hover:bg-primary/10 transition-colors text-xs sm:text-base h-10 sm:h-12"
 						>
-							View Full Journey
+							View Full Journey{" "}
+							<ArrowRight className="ml-1.5 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
 						</Link>
 					</motion.div>
 				</div>
