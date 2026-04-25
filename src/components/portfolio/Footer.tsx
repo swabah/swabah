@@ -103,7 +103,7 @@ export const Footer = () => (
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-					className="text-[20vw] font-black  tracking-tighter text-foreground uppercase mix-blend-difference opacity-20 sm:opacity-100"
+					className="text-[20vw] font-black leading-[0.8] tracking-tighter text-foreground uppercase mix-blend-difference opacity-20 sm:opacity-100"
 				>
 					swabah<span className="text-blue-500">.</span>
 				</motion.h2>
