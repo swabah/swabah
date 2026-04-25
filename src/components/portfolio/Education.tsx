@@ -17,7 +17,7 @@ export const Education = ({ isPreview = false }: EducationProps) => {
 			title="Education"
 			description="My academic path and specialized studies that have shaped my knowledge and skills."
 		>
-			<div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent pt-10">
+			<div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent pt-10">
 				{displayData.map((item, index) => (
 					<motion.div
 						key={item.id}
@@ -25,10 +25,10 @@ export const Education = ({ isPreview = false }: EducationProps) => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.5, delay: index * 0.1 }}
-						className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+						className="relative flex items-start md:items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
 					>
 						{/* Icon/Dot */}
-						<div className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors group-hover:border-primary/50 group-hover:bg-primary/5">
+						<div className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background shadow-sm shrink-0 ml-0 md:ml-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors group-hover:border-primary/50 group-hover:bg-primary/5 z-10">
 							{item.type === "academic" ? (
 								<GraduationCap className="w-5 h-5 text-primary" />
 							) : (
@@ -37,27 +37,27 @@ export const Education = ({ isPreview = false }: EducationProps) => {
 						</div>
 
 						{/* Content */}
-						<div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:bg-card/80 transition-all duration-300 shadow-sm">
-							<div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-								<span className="inline-flex items-center gap-1 text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-									<Calendar className="w-3 h-3" />
+						<div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:bg-card/80 transition-all duration-300 shadow-sm">
+							<div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+								<span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">
+									<Calendar className="w-3.5 h-3.5" />
 									{item.period}
 								</span>
 								{item.location && (
-									<span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-										<MapPin className="w-3 h-3" />
+									<span className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground font-medium">
+										<MapPin className="w-3.5 h-3.5" />
 										{item.location}
 									</span>
 								)}
 							</div>
-							<h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+							<h3 className="text-lg md:text-xl font-bold mb-1.5 group-hover:text-primary transition-colors leading-tight">
 								{item.degree}
 							</h3>
-							<div className="text-sm font-medium text-foreground/80 mb-3">
+							<div className="text-sm font-semibold text-foreground/70 mb-4">
 								{item.institution}
 							</div>
 							{item.description && (
-								<p className="text-sm text-muted-foreground leading-relaxed">
+								<p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
 									{item.description}
 								</p>
 							)}
