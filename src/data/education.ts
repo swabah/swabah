@@ -21,7 +21,7 @@ export const educationData: EducationItem[] = [
   {
     id: "ahlussuffa-dars",
     degree: "Integrated Islamic Studies",
-    institution: "Ahlussuffa Dars, Parapram, Kannur, Kerala",
+    institution: "Ahlussuffa Integrated Studies, Parapram, Kannur, Kerala",
     location: "Kannur, Kerala",
     period: "2022 - Present",
     description: "Affiliated institution of the Jamiathul Hind Al Islamiyya. It specializes in integrated Islamic studies and is recognized for its educational role in the area.",

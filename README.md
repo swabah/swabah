@@ -33,8 +33,22 @@ Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a 
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=prisma&logoColor=white" />
+  <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
   <img src="https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=white" />
 </div>
+
+---
+
+### 🧠 Skills & Expertise
+
+- **Frontend Architecture**: Scalable React patterns, Server-side rendering (SSR), Modern CSS-in-JS.
+- **Backend Engineering**: Type-safe REST & GraphQL APIs, Database modeling, Serverless functions.
+- **AI Integration**: Implementing Face Recognition, LLM orchestration (Ollama/Hugging Face), Prompt Engineering.
+- **Problem Solving**: Technical leadership, Performance optimization, User-centric product design.
 
 ---
 
@@ -54,7 +68,7 @@ Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a 
 | Period | Education | Institution |
 | :--- | :--- | :--- |
 | **2023 - 2026** | **Bachelor of Computer Applications** | IGNOU |
-| **2022 - Present** | **Integrated Islamic Studies** | Ahlussuffa Dars, Kannur |
+| **2022 - Present** | **Integrated Islamic Studies** | Ahlussuffa Integrated Studies, Kannur |
 | **2020 - 2022** | **Senior Islamic Studies** | Dalaelul Khairat, Malappuram |
 | **2020 - 2022** | **Higher Secondary** | DHHSS & GHSS Edappal |
 
