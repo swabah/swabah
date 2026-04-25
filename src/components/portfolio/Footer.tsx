@@ -26,13 +26,13 @@ const socialLinks = [
 export const Footer = () => (
 	<footer className="pt-24 pb-12 mt-20 border-t border-border/30 bg-background relative overflow-hidden flex flex-col items-center">
 		{/* Giant Text - Positioned Absolutely Behind Everything */}
-		<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] pointer-events-none select-none overflow-hidden flex items-center justify-center -z-0">
+		<div className="absolute top-3/4 md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] pointer-events-none select-none overflow-hidden flex items-center justify-center -z-0">
 			<motion.h2
 				initial={{ opacity: 0, scale: 0.8 }}
 				whileInView={{ opacity: 1, scale: 1 }}
 				viewport={{ once: true }}
 				transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-				className="text-[30vw] font-black leading-none tracking-tighter text-foreground/[0.03] uppercase whitespace-nowrap"
+				className="text-[60vw] md:text-[30vw] font-black leading-none tracking-tighter text-foreground/[0.03] uppercase whitespace-nowrap"
 			>
 				swabah<span className="text-blue-500/10">.</span>
 			</motion.h2>
@@ -97,21 +97,8 @@ export const Footer = () => (
 				</div>
 			</div>
 
-			{/* Middle Section: Second Giant Text Layer (Interacting with layout) */}
-			<div className="relative mb-24 select-none w-full overflow-hidden flex justify-center">
-				<motion.h2
-					initial={{ opacity: 0, y: 50 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-					className="text-[20vw] font-black leading-[0.8] tracking-tighter text-foreground uppercase mix-blend-difference opacity-20 sm:opacity-100"
-				>
-					swabah
-				</motion.h2>
-			</div>
-
 			{/* Bottom Section: Copyright & Built Info */}
-			<div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-8 border-t border-border/20 w-full text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+			<div className="pt-20 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-8 border-t border-border/20 w-full text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
 				<div className="text-center md:text-left">
 					© {new Date().getFullYear()} Ahmed Swabah.
 				</div>
