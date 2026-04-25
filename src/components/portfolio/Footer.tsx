@@ -12,7 +12,11 @@ const links = [
 
 const socialLinks = [
 	{ href: "https://github.com/swabah", icon: Github, label: "GitHub" },
-	{ href: "https://www.linkedin.com/in/sw-abah/", icon: Linkedin, label: "LinkedIn" },
+	{
+		href: "https://www.linkedin.com/in/sw-abah/",
+		icon: Linkedin,
+		label: "LinkedIn",
+	},
 	{ href: "https://x.com/swabah", label: "X" }, // Added X as seen in image
 	{ href: "https://instagram.com/swabah", label: "Instagram" }, // Added Instagram as seen in image
 	{ href: "mailto:ahmedswabah.dev@gmail.com", icon: Mail, label: "Email" },
@@ -22,14 +26,14 @@ export const Footer = () => (
 	<footer className="pt-24 pb-12 mt-20 border-t border-border/30 bg-background relative overflow-hidden flex flex-col items-center">
 		{/* Giant Text - Positioned Absolutely Behind Everything */}
 		<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] pointer-events-none select-none overflow-hidden flex items-center justify-center -z-0">
-			<motion.h2 
+			<motion.h2
 				initial={{ opacity: 0, scale: 0.8 }}
 				whileInView={{ opacity: 1, scale: 1 }}
 				viewport={{ once: true }}
 				transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
 				className="text-[30vw] font-black leading-none tracking-tighter text-foreground/[0.03] uppercase whitespace-nowrap"
 			>
-				swabah
+				swabah<span className="text-blue-500/10">.</span>
 			</motion.h2>
 		</div>
 
@@ -37,7 +41,9 @@ export const Footer = () => (
 			{/* Top Section: Links Grid */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
 				<div className="space-y-6">
-					<h4 className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Navigation</h4>
+					<h4 className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+						Navigation
+					</h4>
 					<ul className="flex flex-col gap-4">
 						{links.map((l) => (
 							<li key={l.href}>
@@ -52,7 +58,9 @@ export const Footer = () => (
 					</ul>
 				</div>
 				<div className="space-y-6">
-					<h4 className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Social</h4>
+					<h4 className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+						Social
+					</h4>
 					<ul className="flex flex-col gap-4">
 						{socialLinks.map((l) => (
 							<li key={l.label}>
@@ -70,12 +78,16 @@ export const Footer = () => (
 				</div>
 				<div className="sm:col-span-2 lg:flex lg:flex-col lg:justify-between lg:items-end lg:text-right space-y-4">
 					<div className="space-y-2">
-						<p className="text-sm text-muted-foreground">Based in Kozhikode, Kerala</p>
-						<p className="text-sm text-muted-foreground italic font-serif">Working remotely worldwide.</p>
+						<p className="text-sm text-muted-foreground">
+							Based in Kozhikode, Kerala
+						</p>
+						<p className="text-sm text-muted-foreground italic font-serif">
+							Working remotely worldwide.
+						</p>
 					</div>
 					<div className="pt-4 border-t border-border/10 lg:border-none">
-						<a 
-							href="mailto:ahmedswabah.dev@gmail.com" 
+						<a
+							href="mailto:ahmedswabah.dev@gmail.com"
 							className="text-lg md:text-2xl font-bold hover:text-primary transition-colors underline decoration-primary/30 underline-offset-8"
 						>
 							Get in touch
@@ -86,14 +98,14 @@ export const Footer = () => (
 
 			{/* Middle Section: Second Giant Text Layer (Interacting with layout) */}
 			<div className="relative mb-24 select-none w-full overflow-hidden flex justify-center">
-				<motion.h2 
+				<motion.h2
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-					className="text-[20vw] font-black leading-[0.8] tracking-tighter text-foreground uppercase mix-blend-difference opacity-20 sm:opacity-100"
+					className="text-[20vw] font-black  tracking-tighter text-foreground uppercase mix-blend-difference opacity-20 sm:opacity-100"
 				>
-					swabah
+					swabah<span className="text-blue-500">.</span>
 				</motion.h2>
 			</div>
 
@@ -103,19 +115,23 @@ export const Footer = () => (
 					© {new Date().getFullYear()} Ahmed Swabah.
 				</div>
 				<div className="flex flex-col md:flex-row items-center gap-6">
-					<span className="text-center md:text-left">Designed & Built by hand</span>
+					<span className="text-center md:text-left">
+						Designed & Built by hand
+					</span>
 					<div className="flex items-center gap-4">
-						{socialLinks.filter(s => s.icon).map(({ href, icon: Icon, label }) => (
-							<a
-								key={label}
-								href={href}
-								target="_blank"
-								rel="noreferrer"
-								className="hover:text-primary transition-colors p-2 rounded-full bg-secondary/50 border border-border/50"
-							>
-								<Icon className="h-4 w-4" />
-							</a>
-						))}
+						{socialLinks
+							.filter((s) => s.icon)
+							.map(({ href, icon: Icon, label }) => (
+								<a
+									key={label}
+									href={href}
+									target="_blank"
+									rel="noreferrer"
+									className="hover:text-primary transition-colors p-2 rounded-full bg-secondary/50 border border-border/50"
+								>
+									<Icon className="h-4 w-4" />
+								</a>
+							))}
 					</div>
 				</div>
 			</div>
