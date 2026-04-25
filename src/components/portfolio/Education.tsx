@@ -148,10 +148,10 @@ export const Education = ({ isPreview = false }: EducationProps) => {
 					>
 						<Link
 							to="/education"
-							className="rounded-full px-6 sm:px-8 border-border/50 hover:border-primary/50 hover:bg-primary/10 transition-colors text-xs sm:text-base h-10 sm:h-12"
+							className="inline-flex items-center gap-2 rounded-full border border-border/50 px-8 py-4 text-sm font-medium hover:border-primary/50 hover:bg-primary/5 transition-all group"
 						>
-							View Full Journey{" "}
-							<ArrowRight className="ml-1.5 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
+							View Full Journey
+							<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
 						</Link>
 					</motion.div>
 				</div>

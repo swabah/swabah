@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { Section } from "./Section";
 import { experienceData } from "@/data/experience";
-import { Briefcase, Calendar, MapPin, ExternalLink, Sparkles } from "lucide-react";
+import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ExperienceProps {
@@ -25,10 +25,14 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 			initial={{ opacity: 0, y: 40 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-50px" }}
-			transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+			transition={{
+				duration: 0.8,
+				delay: index * 0.1,
+				ease: [0.16, 1, 0.3, 1],
+			}}
 			className="relative group"
 		>
-			<div 
+			<div
 				onMouseMove={onMouseMove}
 				className="relative p-1 rounded-[2.5rem] bg-gradient-to-b from-border/20 to-transparent hover:from-primary/20 transition-all duration-700 group/card"
 			>
@@ -36,7 +40,7 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 					{/* Background Watermark Text */}
 					<div className="absolute -bottom-10 -right-10 pointer-events-none select-none">
 						<span className="text-[12rem] font-black text-white/[0.02] leading-none uppercase tracking-tighter transition-all duration-1000 group-hover/card:text-primary/[0.04] group-hover/card:scale-110 block">
-							{item.company.split(' ')[0]}
+							{item.company.split(" ")[0]}
 						</span>
 					</div>
 
@@ -78,12 +82,12 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 											</span>
 										)}
 									</div>
-									
+
 									<div className="flex flex-wrap items-center gap-x-6 gap-y-2">
 										{item.companyUrl ? (
-											<a 
-												href={item.companyUrl} 
-												target="_blank" 
+											<a
+												href={item.companyUrl}
+												target="_blank"
 												rel="noreferrer"
 												className="group/link flex items-center gap-2 text-lg font-bold text-muted-foreground hover:text-primary transition-colors"
 											>
@@ -91,10 +95,14 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 												<ExternalLink className="w-4 h-4 translate-y-px opacity-0 group-hover/link:opacity-100 transition-all" />
 											</a>
 										) : (
-											<span className="text-lg font-bold text-muted-foreground">{item.company}</span>
+											<span className="text-lg font-bold text-muted-foreground">
+												{item.company}
+											</span>
 										)}
 										<span className="h-1 w-1 rounded-full bg-border" />
-										<span className="text-sm font-mono uppercase tracking-[0.2em] text-primary/60 font-bold">{item.type}</span>
+										<span className="text-sm font-mono uppercase tracking-[0.2em] text-primary/60 font-bold">
+											{item.type}
+										</span>
 									</div>
 								</div>
 							</div>
@@ -121,7 +129,7 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 								)}
 								<div className="flex flex-wrap gap-2 pt-2">
 									{item.skills.map((skill: string) => (
-										<div 
+										<div
 											key={skill}
 											className="px-5 py-2 rounded-2xl bg-white/[0.02] border border-white/5 text-xs font-bold text-foreground/50 group-hover/card:border-primary/20 group-hover/card:text-primary/70 transition-all duration-500"
 										>
@@ -134,8 +142,12 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 							{/* Decorative Block */}
 							<div className="hidden lg:block h-24 rounded-3xl border border-white/5 bg-white/[0.01] p-6 group-hover/card:border-primary/10 transition-colors">
 								<div className="flex gap-2 opacity-20 group-hover/card:opacity-40 transition-opacity">
-									{[1,2,3,4,5].map(i => (
-										<div key={i} className="h-12 w-1.5 rounded-full bg-primary" style={{ height: `${20 + Math.random() * 60}%` }} />
+									{[1, 2, 3, 4, 5].map((i) => (
+										<div
+											key={i}
+											className="h-12 w-1.5 rounded-full bg-primary"
+											style={{ height: `${20 + Math.random() * 60}%` }}
+										/>
 									))}
 								</div>
 							</div>
@@ -149,7 +161,7 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 
 export const Experience = ({ isPreview = false }: ExperienceProps) => {
 	const displayData = isPreview ? experienceData.slice(0, 3) : experienceData;
-	
+
 	return (
 		<Section
 			id="experience"
