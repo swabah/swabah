@@ -71,7 +71,7 @@ export const projects: Project[] = [
         "Scalable architecture handling 10,000+ concurrent users"
       ],
       timeline: "3 months",
-      role: "Full-Stack Developer & AI Engineer"
+      role: "Full Stack Software Engineer & AI Engineer"
     }
   },
   {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
         "99.9% uptime with Supabase infrastructure"
       ],
       timeline: "4 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -165,7 +165,7 @@ export const projects: Project[] = [
         "50% reduction in bounce rate"
       ],
       timeline: "2 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -210,7 +210,7 @@ export const projects: Project[] = [
         "99.9% system uptime"
       ],
       timeline: "5 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -254,7 +254,7 @@ export const projects: Project[] = [
         "95% reduction in manual paperwork"
       ],
       timeline: "3 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -298,7 +298,7 @@ export const projects: Project[] = [
         "60% reduction in setup time"
       ],
       timeline: "4 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -342,7 +342,7 @@ export const projects: Project[] = [
         "Successfully handling 5,000+ products"
       ],
       timeline: "2 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -386,7 +386,7 @@ export const projects: Project[] = [
         "90% user satisfaction rate"
       ],
       timeline: "3 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -430,7 +430,7 @@ export const projects: Project[] = [
         "Successfully handling 100,000+ log entries"
       ],
       timeline: "2 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -473,7 +473,7 @@ export const projects: Project[] = [
         "95% positive feedback on design"
       ],
       timeline: "2 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -517,7 +517,7 @@ export const projects: Project[] = [
         "Zero system downtime during events"
       ],
       timeline: "2 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -561,7 +561,7 @@ export const projects: Project[] = [
         "Staff can update content without developer assistance"
       ],
       timeline: "1.5 months",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -605,7 +605,7 @@ export const projects: Project[] = [
         "Works reliably across all devices"
       ],
       timeline: "1 month",
-      role: "Frontend Developer"
+      role: "Frontend Software Engineer"
     }
   },
   {
@@ -649,7 +649,7 @@ export const projects: Project[] = [
         "Zero technical issues since launch"
       ],
       timeline: "1 month",
-      role: "Frontend Developer"
+      role: "Frontend Software Engineer"
     }
   },
   {
@@ -693,7 +693,7 @@ export const projects: Project[] = [
         "Zero maintenance issues"
       ],
       timeline: "1 month",
-      role: "Frontend Developer"
+      role: "Frontend Software Engineer"
     }
   },
   {
@@ -737,7 +737,7 @@ export const projects: Project[] = [
         "Owner can update content easily"
       ],
       timeline: "2 weeks",
-      role: "Frontend Developer"
+      role: "Frontend Software Engineer"
     }
   },
   {
@@ -780,7 +780,7 @@ export const projects: Project[] = [
         "Average response time under 50ms"
       ],
       timeline: "1 month",
-      role: "Backend Developer"
+      role: "Backend Software Engineer"
     }
   },
   {
@@ -823,7 +823,7 @@ export const projects: Project[] = [
         "Used by 1,000+ users"
       ],
       timeline: "2 weeks",
-      role: "Backend Developer"
+      role: "Backend Software Engineer"
     }
   },
   {
@@ -867,7 +867,7 @@ export const projects: Project[] = [
         "Easy to integrate and customize"
       ],
       timeline: "2 weeks",
-      role: "Full-Stack Developer"
+      role: "Full Stack Software Engineer"
     }
   },
   {
@@ -911,7 +911,7 @@ export const projects: Project[] = [
         "Zero performance issues"
       ],
       timeline: "1 week",
-      role: "Frontend Developer"
+      role: "Frontend Software Engineer"
     }
   },
   {
@@ -955,7 +955,7 @@ export const projects: Project[] = [
         "Zero user complaints about accuracy"
       ],
       timeline: "1 week",
-      role: "Frontend Developer"
+      role: "Frontend Software Engineer"
     }
   },
   {
@@ -998,7 +998,7 @@ export const projects: Project[] = [
         "Used as reference by 50+ developers"
       ],
       timeline: "1 week",
-      role: "Java Developer"
+      role: "Java Software Engineer"
     }
   }
 ];

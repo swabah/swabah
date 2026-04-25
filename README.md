@@ -1,7 +1,7 @@
 # Ahmed Swabah <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Waving Hand" width="40" height="40" />
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=40&pause=1000&color=A78BFA&center=true&vCenter=true&width=600&lines=Full-Stack+Developer;AI+Engineer;Islamic+Scholar;Problem+Solver" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=40&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&lines=Full+Stack+Software+Engineer;AI+Engineer;Islamic+Scholar;Problem+Solver" alt="Typing SVG" />
 </div>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 ### 💫 About Me
 
-I am a passionate **Full-Stack Developer** and **AI Engineer** based in Kozhikode, Kerala. My work focuses on building high-performance web applications and integrating cutting-edge AI solutions to solve real-world problems.
+I am a passionate **Full Stack Software Engineer** and **AI Engineer** based in Kozhikode, Kerala. My work focuses on building high-performance web applications and integrating cutting-edge AI solutions to solve real-world problems.
 
 Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a unique perspective of discipline, ethics, and community focus to my technical work.
 
