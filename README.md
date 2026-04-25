@@ -63,6 +63,18 @@ Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a 
 
 ---
 
+### 💼 Experience
+
+| Role | Company | Period |
+| :--- | :--- | :--- |
+| **Full Stack Software Engineer** | upskillabs | Mar 2025 - Present |
+| **Co-Founder** | Luminexis | Jun 2025 - Present |
+| **Full Stack Software Engineer** | Galamine AI | Sep 2025 - Present |
+| **Web Developer** | Trizo Creatives | Sep 2023 - Present |
+| **Developer** | Amri Foundation | 2023 - 2024 |
+
+---
+
 ### 🎓 The Journey
 
 | Period | Education | Institution |

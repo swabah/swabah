@@ -4,6 +4,7 @@ import { Education } from "@/components/portfolio/Education";
 import { Hero } from "@/components/portfolio/Hero";
 import { ProjectsPreview } from "@/components/portfolio/ProjectsPreview";
 import { Skills } from "@/components/portfolio/Skills";
+import { Experience } from "@/components/portfolio/Experience";
 
 const Index = () => {
 	return (
@@ -11,6 +12,7 @@ const Index = () => {
 			<Hero />
 			<About />
 			<Skills />
+			<Experience isPreview={true} />
 			<Education isPreview={true} />
 			<ProjectsPreview />
 			<Contact />

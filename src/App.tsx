@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import Projects from "./pages/Projects.tsx";
 import ProjectDetail from "./pages/ProjectDetail.tsx";
 import Education from "./pages/Education.tsx";
+import Experience from "./pages/Experience.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { Layout } from "@/components/portfolio/Layout";
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/education" element={<Education />} />
+            <Route path="/experience" element={<Experience />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
