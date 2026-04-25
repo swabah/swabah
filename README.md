@@ -18,7 +18,6 @@ I am a passionate **Full-Stack Developer** and **AI Engineer** based in Kozhikod
 
 Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a unique perspective of discipline, ethics, and community focus to my technical work.
 
-- 🔭 Currently building **Present AI** (Face Recognition for Events)
 - 🌱 Pursuing **BCA** at IGNOU (2023-2026)
 - ⚡ Fun fact: I balance my time between modern tech stacks and classical Islamic texts.
 
