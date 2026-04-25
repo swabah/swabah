@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { educationData } from "@/data/education";
 import { GraduationCap, BookOpen, Calendar, MapPin } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 interface EducationProps {
 	isPreview?: boolean;
@@ -10,7 +10,6 @@ interface EducationProps {
 
 export const Education = ({ isPreview = false }: EducationProps) => {
 	const displayData = isPreview ? educationData.slice(0, 3) : educationData;
-
 	return (
 		<Section
 			id="education"
@@ -69,15 +68,18 @@ export const Education = ({ isPreview = false }: EducationProps) => {
 
 			{isPreview && (
 				<div className="mt-12 text-center">
-					<motion.a
-						href="/education"
+					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
-						className="inline-flex items-center justify-center rounded-full bg-secondary px-8 py-3 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
 					>
-						View Full Journey
-					</motion.a>
+						<Link
+							to="/education"
+							className="inline-flex items-center justify-center rounded-full bg-secondary px-8 py-3 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
+						>
+							View Full Journey
+						</Link>
+					</motion.div>
 				</div>
 			)}
 		</Section>

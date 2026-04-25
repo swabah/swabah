@@ -1,10 +1,12 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { AnimatedText } from "./AnimatedText";
+import { Link } from "react-router-dom";
 
 const links = [
 	{ href: "/#about", label: "About" },
 	{ href: "/#skills", label: "Skills" },
-	{ href: "/#projects", label: "Projects" },
+	{ href: "/education", label: "Education" },
+	{ href: "/projects", label: "Projects" },
 	{ href: "/#contact", label: "Contact" },
 ];
 
@@ -19,12 +21,12 @@ export const Footer = () => (
 			<ul className="flex items-center gap-6">
 				{links.map((l) => (
 					<li key={l.href}>
-						<a
-							href={l.href}
+						<Link
+							to={l.href}
 							className="text-sm text-muted-foreground hover:text-foreground transition-colors"
 						>
 							{l.label}
-						</a>
+						</Link>
 					</li>
 				))}
 			</ul>

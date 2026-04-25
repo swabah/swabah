@@ -1,6 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import { Navbar } from "@/components/portfolio/Navbar";
-import { Footer } from "@/components/portfolio/Footer";
 import { motion } from "framer-motion";
 import {
 	Github,
@@ -29,18 +27,14 @@ const ProjectDetail = () => {
 
 	if (!project || !project.caseStudy) {
 		return (
-			<main className="min-h-screen bg-background text-foreground">
-				<Navbar />
-				<div className="container pt-32 pb-16">
-					<div className="text-center">
-						<h1 className="text-4xl font-bold mb-4">Project not found</h1>
-						<Link to="/projects">
-							<Button variant="outline">Back to Projects</Button>
-						</Link>
-					</div>
+			<div className="container pt-32 pb-16">
+				<div className="text-center">
+					<h1 className="text-4xl font-bold mb-4">Project not found</h1>
+					<Link to="/projects">
+						<Button variant="outline">Back to Projects</Button>
+					</Link>
 				</div>
-				<Footer />
-			</main>
+			</div>
 		);
 	}
 
@@ -72,9 +66,7 @@ const ProjectDetail = () => {
 	);
 
 	return (
-		<main className="min-h-screen bg-background text-foreground selection:bg-primary/30">
-			<Navbar />
-
+		<div className="selection:bg-primary/30">
 			{/* Hero Section */}
 			<section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden border-b border-border/50 bg-background/50">
 				{/* Cross lines pattern highlight */}
@@ -397,9 +389,7 @@ const ProjectDetail = () => {
 					</motion.div>
 				</div>
 			</section>
-
-			<Footer />
-		</main>
+		</div>
 	);
 };
 
