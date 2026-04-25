@@ -12,9 +12,9 @@ const Index = () => {
 			<Hero />
 			<About />
 			<Skills />
+			<ProjectsPreview />
 			<Experience isPreview={true} />
 			<Education isPreview={true} />
-			<ProjectsPreview />
 			<Contact />
 		</>
 	);

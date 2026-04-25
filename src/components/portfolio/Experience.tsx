@@ -20,24 +20,38 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 30 }}
-			whileInView={{ opacity: 1, y: 0 }}
+			initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+			whileInView={{ opacity: 1, x: 0 }}
 			viewport={{ once: true, margin: "-100px" }}
-			transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+			transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
 			className="relative group"
 		>
 			<div 
 				onMouseMove={onMouseMove}
-				className="relative p-6 sm:p-8 rounded-2xl border border-border/60 bg-card/20 backdrop-blur-sm transition-all duration-500 shadow-xl overflow-hidden group/card"
+				className="relative p-8 sm:p-10 rounded-[2.5rem] border border-border/40 bg-card/10 backdrop-blur-md transition-all duration-700 shadow-2xl overflow-hidden group/card"
 			>
-				{/* Mouse Spotlight */}
+				{/* Mouse Spotlight Background */}
 				<motion.div
-					className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover/card:opacity-100 transition duration-300 z-10"
+					className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 group-hover/card:opacity-100 transition duration-500 z-0"
+					style={{
+						background: useMotionTemplate`
+							radial-gradient(
+								600px circle at ${mouseX}px ${mouseY}px,
+								rgba(var(--primary-rgb), 0.08),
+								transparent 80%
+							)
+						`,
+					}}
+				/>
+				
+				{/* Mouse Spotlight Border */}
+				<motion.div
+					className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 group-hover/card:opacity-100 transition duration-500 z-10"
 					style={{
 						background: useMotionTemplate`
 							radial-gradient(
 								400px circle at ${mouseX}px ${mouseY}px,
-								rgba(var(--primary-rgb), 0.15),
+								rgba(var(--primary-rgb), 0.3),
 								transparent 80%
 							)
 						`,
@@ -51,57 +65,80 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 					}}
 				/>
 
-				<div className="flex flex-col md:flex-row md:items-start justify-between gap-6 relative z-20">
-					<div className="flex flex-col sm:flex-row items-start gap-5">
-						{/* Company Logo Placeholder / Icon */}
-						<div className="w-14 h-14 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:border-primary/30 transition-all duration-500">
-							<Briefcase className="w-6 h-6 text-primary" />
-						</div>
-
-						<div className="space-y-2">
-							<div className="flex flex-wrap items-center gap-2">
-								<h3 className="text-xl sm:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
-									{item.role}
-								</h3>
-								<span className="text-xs px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground font-mono uppercase tracking-wider">
-									{item.type}
-								</span>
+				<div className="flex flex-col gap-8 relative z-20">
+					<div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+						<div className="flex flex-col sm:flex-row items-start gap-6">
+							{/* Company Logo / Brand Accent */}
+							<div className="relative shrink-0">
+								<div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 flex items-center justify-center group-hover:scale-110 group-hover:border-primary/40 transition-all duration-700 ease-out shadow-lg">
+									<Briefcase className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors" />
+								</div>
+								<div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-lg bg-background border border-border flex items-center justify-center shadow-sm">
+									<Sparkles className="w-3 h-3 text-primary" />
+								</div>
 							</div>
-							
-							<div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground font-medium">
-								<span className="flex items-center gap-1.5 text-foreground/80 font-bold">
-									<Sparkles className="w-3.5 h-3.5 text-primary" />
-									{item.company}
-								</span>
-								<span className="flex items-center gap-1.5">
-									<Calendar className="w-3.5 h-3.5" />
-									{item.period}
-								</span>
-								<span className="flex items-center gap-1.5">
-									<MapPin className="w-3.5 h-3.5" />
-									{item.location}
-								</span>
+
+							<div className="space-y-3">
+								<div className="flex flex-wrap items-center gap-3">
+									<h3 className="text-2xl sm:text-3xl font-black tracking-tight leading-none group-hover:text-primary transition-colors duration-500">
+										{item.role}
+									</h3>
+									<span className="text-[10px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-mono font-bold uppercase tracking-widest border border-primary/20">
+										{item.type}
+									</span>
+								</div>
+								
+								<div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm sm:text-base text-muted-foreground/80 font-semibold">
+									<div className="flex items-center gap-2 group/company">
+										{item.companyUrl ? (
+											<a 
+												href={item.companyUrl} 
+												target="_blank" 
+												rel="noreferrer"
+												className="hover:text-primary transition-colors flex items-center gap-2 underline decoration-primary/20 underline-offset-4"
+											>
+												{item.company}
+												<ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover/company:opacity-100 -translate-y-1 translate-x-[-4px] group-hover/company:translate-x-0 transition-all" />
+											</a>
+										) : (
+											<span>{item.company}</span>
+										)}
+									</div>
+									<div className="flex items-center gap-2">
+										<Calendar className="w-4 h-4 text-primary/60" />
+										<span className="font-mono text-xs uppercase tracking-wider">{item.period}</span>
+									</div>
+									<div className="flex items-center gap-2">
+										<MapPin className="w-4 h-4 text-primary/60" />
+										<span className="text-xs uppercase tracking-wider">{item.location}</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
-					<div className="flex flex-wrap gap-2 md:justify-end max-w-md">
-						{item.skills.map((skill: string) => (
-							<span 
-								key={skill}
-								className="text-[10px] sm:text-xs font-mono px-3 py-1 rounded-md bg-primary/5 border border-primary/10 text-primary/80 hover:bg-primary/10 hover:border-primary/30 transition-colors cursor-default"
-							>
-								{skill}
-							</span>
-						))}
+					<div className="space-y-6">
+						{item.description && (
+							<p className="text-sm sm:text-base text-muted-foreground/70 leading-relaxed font-medium max-w-3xl">
+								{item.description}
+							</p>
+						)}
+
+						<div className="flex flex-wrap gap-2.5">
+							{item.skills.map((skill: string) => (
+								<span 
+									key={skill}
+									className="text-[10px] sm:text-xs font-mono px-4 py-1.5 rounded-xl bg-secondary/30 border border-border/50 text-foreground/60 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-default"
+								>
+									{skill}
+								</span>
+							))}
+						</div>
 					</div>
 				</div>
 
-				{item.description && (
-					<p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-3xl relative z-20">
-						{item.description}
-					</p>
-				)}
+				{/* Corner Decorative Element */}
+				<div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-colors duration-700" />
 			</div>
 		</motion.div>
 	);
