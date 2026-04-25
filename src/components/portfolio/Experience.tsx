@@ -18,127 +18,130 @@ const ExperienceCard = ({ item, index }: { item: any; index: number }) => {
 		mouseY.set(clientY - top);
 	}
 
+	const isCurrent = item.period.toLowerCase().includes("present");
+
 	return (
 		<motion.div
-			initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-			whileInView={{ opacity: 1, x: 0 }}
-			viewport={{ once: true, margin: "-100px" }}
+			initial={{ opacity: 0, y: 40 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, margin: "-50px" }}
 			transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
 			className="relative group"
 		>
 			<div 
 				onMouseMove={onMouseMove}
-				className="relative p-8 sm:p-10 rounded-[2.5rem] border border-border/40 bg-card/10 backdrop-blur-md transition-all duration-700 shadow-2xl overflow-hidden group/card"
+				className="relative p-1 rounded-[2.5rem] bg-gradient-to-b from-border/20 to-transparent hover:from-primary/20 transition-all duration-700 group/card"
 			>
-				{/* Mouse Spotlight Background */}
-				<motion.div
-					className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 group-hover/card:opacity-100 transition duration-500 z-0"
-					style={{
-						background: useMotionTemplate`
-							radial-gradient(
-								600px circle at ${mouseX}px ${mouseY}px,
-								rgba(var(--primary-rgb), 0.08),
-								transparent 80%
-							)
-						`,
-					}}
-				/>
-				
-				{/* Mouse Spotlight Border */}
-				<motion.div
-					className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 group-hover/card:opacity-100 transition duration-500 z-10"
-					style={{
-						background: useMotionTemplate`
-							radial-gradient(
-								400px circle at ${mouseX}px ${mouseY}px,
-								rgba(var(--primary-rgb), 0.3),
-								transparent 80%
-							)
-						`,
-						maskImage: useMotionTemplate`
-							radial-gradient(
-								400px circle at ${mouseX}px ${mouseY}px,
-								black,
-								transparent 80%
-							)
-						`,
-					}}
-				/>
+				<div className="relative p-8 sm:p-12 rounded-[2.4rem] bg-card/40 backdrop-blur-2xl border border-white/5 overflow-hidden">
+					{/* Background Watermark Text */}
+					<div className="absolute -bottom-10 -right-10 pointer-events-none select-none">
+						<span className="text-[12rem] font-black text-white/[0.02] leading-none uppercase tracking-tighter transition-all duration-1000 group-hover/card:text-primary/[0.04] group-hover/card:scale-110 block">
+							{item.company.split(' ')[0]}
+						</span>
+					</div>
 
-				<div className="flex flex-col gap-8 relative z-20">
-					<div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-						<div className="flex flex-col sm:flex-row items-start gap-6">
-							{/* Company Logo / Brand Accent */}
-							<div className="relative shrink-0">
-								<div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 flex items-center justify-center group-hover:scale-110 group-hover:border-primary/40 transition-all duration-700 ease-out shadow-lg">
-									<Briefcase className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors" />
-								</div>
-								<div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-lg bg-background border border-border flex items-center justify-center shadow-sm">
-									<Sparkles className="w-3 h-3 text-primary" />
-								</div>
-							</div>
+					{/* Mouse Spotlight */}
+					<motion.div
+						className="pointer-events-none absolute -inset-px rounded-[2.4rem] opacity-0 group-hover/card:opacity-100 transition duration-700 z-10"
+						style={{
+							background: useMotionTemplate`
+								radial-gradient(
+									600px circle at ${mouseX}px ${mouseY}px,
+									rgba(var(--primary-rgb), 0.12),
+									transparent 80%
+								)
+							`,
+						}}
+					/>
 
-							<div className="space-y-3">
-								<div className="flex flex-wrap items-center gap-3">
-									<h3 className="text-2xl sm:text-3xl font-black tracking-tight leading-none group-hover:text-primary transition-colors duration-500">
-										{item.role}
-									</h3>
-									<span className="text-[10px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-mono font-bold uppercase tracking-widest border border-primary/20">
-										{item.type}
-									</span>
+					<div className="flex flex-col gap-10 relative z-20">
+						{/* Header Section */}
+						<div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+							<div className="flex items-center gap-8">
+								{/* Floating Icon Wrapper */}
+								<div className="relative group/icon">
+									<div className="w-20 h-20 rounded-3xl bg-white/[0.03] border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover/card:scale-105 group-hover/card:border-primary/40 transition-all duration-700 shadow-2xl relative z-10">
+										<Briefcase className="w-10 h-10 text-primary/60 group-hover/card:text-primary transition-colors" />
+									</div>
+									<div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-1000" />
 								</div>
-								
-								<div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm sm:text-base text-muted-foreground/80 font-semibold">
-									<div className="flex items-center gap-2 group/company">
+
+								<div className="space-y-2">
+									<div className="flex items-center gap-3">
+										<h3 className="text-3xl sm:text-4xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60 group-hover/card:from-primary group-hover/card:to-primary/60 transition-all duration-700">
+											{item.role}
+										</h3>
+										{isCurrent && (
+											<span className="flex h-3 w-3 relative">
+												<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+												<span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+											</span>
+										)}
+									</div>
+									
+									<div className="flex flex-wrap items-center gap-x-6 gap-y-2">
 										{item.companyUrl ? (
 											<a 
 												href={item.companyUrl} 
 												target="_blank" 
 												rel="noreferrer"
-												className="hover:text-primary transition-colors flex items-center gap-2 underline decoration-primary/20 underline-offset-4"
+												className="group/link flex items-center gap-2 text-lg font-bold text-muted-foreground hover:text-primary transition-colors"
 											>
 												{item.company}
-												<ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover/company:opacity-100 -translate-y-1 translate-x-[-4px] group-hover/company:translate-x-0 transition-all" />
+												<ExternalLink className="w-4 h-4 translate-y-px opacity-0 group-hover/link:opacity-100 transition-all" />
 											</a>
 										) : (
-											<span>{item.company}</span>
+											<span className="text-lg font-bold text-muted-foreground">{item.company}</span>
 										)}
+										<span className="h-1 w-1 rounded-full bg-border" />
+										<span className="text-sm font-mono uppercase tracking-[0.2em] text-primary/60 font-bold">{item.type}</span>
 									</div>
-									<div className="flex items-center gap-2">
-										<Calendar className="w-4 h-4 text-primary/60" />
-										<span className="font-mono text-xs uppercase tracking-wider">{item.period}</span>
-									</div>
-									<div className="flex items-center gap-2">
-										<MapPin className="w-4 h-4 text-primary/60" />
-										<span className="text-xs uppercase tracking-wider">{item.location}</span>
-									</div>
+								</div>
+							</div>
+
+							<div className="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-3 lg:gap-1 text-right">
+								<div className="flex items-center gap-2 text-foreground font-mono text-sm font-black">
+									<Calendar className="w-4 h-4 text-primary" />
+									{item.period}
+								</div>
+								<div className="flex items-center gap-2 text-muted-foreground font-medium text-sm">
+									<MapPin className="w-4 h-4" />
+									{item.location}
+								</div>
+							</div>
+						</div>
+
+						{/* Content Grid */}
+						<div className="grid lg:grid-cols-[1fr,300px] gap-12 items-end">
+							<div className="space-y-6">
+								{item.description && (
+									<p className="text-lg text-muted-foreground/80 leading-relaxed font-medium">
+										{item.description}
+									</p>
+								)}
+								<div className="flex flex-wrap gap-2 pt-2">
+									{item.skills.map((skill: string) => (
+										<div 
+											key={skill}
+											className="px-5 py-2 rounded-2xl bg-white/[0.02] border border-white/5 text-xs font-bold text-foreground/50 group-hover/card:border-primary/20 group-hover/card:text-primary/70 transition-all duration-500"
+										>
+											{skill}
+										</div>
+									))}
+								</div>
+							</div>
+
+							{/* Decorative Block */}
+							<div className="hidden lg:block h-24 rounded-3xl border border-white/5 bg-white/[0.01] p-6 group-hover/card:border-primary/10 transition-colors">
+								<div className="flex gap-2 opacity-20 group-hover/card:opacity-40 transition-opacity">
+									{[1,2,3,4,5].map(i => (
+										<div key={i} className="h-12 w-1.5 rounded-full bg-primary" style={{ height: `${20 + Math.random() * 60}%` }} />
+									))}
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<div className="space-y-6">
-						{item.description && (
-							<p className="text-sm sm:text-base text-muted-foreground/70 leading-relaxed font-medium max-w-3xl">
-								{item.description}
-							</p>
-						)}
-
-						<div className="flex flex-wrap gap-2.5">
-							{item.skills.map((skill: string) => (
-								<span 
-									key={skill}
-									className="text-[10px] sm:text-xs font-mono px-4 py-1.5 rounded-xl bg-secondary/30 border border-border/50 text-foreground/60 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-default"
-								>
-									{skill}
-								</span>
-							))}
-						</div>
-					</div>
 				</div>
-
-				{/* Corner Decorative Element */}
-				<div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-colors duration-700" />
 			</div>
 		</motion.div>
 	);
