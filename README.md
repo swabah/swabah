@@ -1,88 +1,91 @@
 # Ahmed Swabah <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Waving Hand" width="40" height="40" />
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=40&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&lines=Full+Stack+Software+Engineer;AI+Engineer;Islamic+Scholar;Problem+Solver" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=38&pause=1000&color=A78BFA&center=true&vCenter=true&width=750&lines=Full+Stack+Software+Engineer;SaaS+Builder+%26+Architect;Product+Engineer;Real-Time+Systems+Developer" alt="Typing SVG" />
 </div>
 
 <p align="center">
-  <a href="https://swabah.vercel.app"><strong>swabah.vercel.app</strong></a> • 
-  <a href="https://linkedin.com/in/sw-abah"><strong>LinkedIn</strong></a> • 
-  <a href="mailto:ahmedswabah.dev@gmail.com"><strong>Email</strong></a>
+  <a href="https://swabah.vercel.app"><strong>🌐 swabah.vercel.app</strong></a> • 
+  <a href="https://linkedin.com/in/sw-abah"><strong>💼 LinkedIn</strong></a> • 
+  <a href="https://github.com/swabah"><strong>🐙 GitHub</strong></a> • 
+  <a href="mailto:ahmedswabah.dev@email.com"><strong>✉️ Email</strong></a>
 </p>
 
 ---
 
 ### 💫 About Me
 
-I am a passionate **Full Stack Software Engineer** and **AI Engineer** based in Kozhikode, Kerala. My work focuses on building high-performance web applications and integrating cutting-edge AI solutions to solve real-world problems.
+I am a **Full Stack Software Engineer & SaaS Builder** based in Kozhikode, Kerala. I specialize in architecting scalable multi-tenant SaaS platforms, type-safe data layers, real-time event-driven systems, and high-performance interactive web applications.
 
-Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a unique perspective of discipline, ethics, and community focus to my technical work.
+Rather than just building isolated features, I take full 0-to-1 product ownership—from database modeling and background async pipelines to intuitive, accessible user interfaces that solve real-world problems and scale reliably.
 
-- 🌱 Pursuing **BCA** at IGNOU (2023-2026)
-- ⚡ Fun fact: I balance my time between modern tech stacks and classical Islamic texts.
+Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a foundational perspective of discipline, ethics, and structured thinking to my engineering.
+
+- 🎓 Pursuing **Bachelor of Computer Applications (BCA)** at IGNOU (2022–2026)
+- ⚡ Focus: Multi-tenant SaaS architectures, real-time tabulation engines, and full-stack product development.
 
 ---
 
-### 🛠️ Tech Stack
+### 🛠️ Tech Stack & Tools
 
 <div align="center">
-  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
-  <img src="https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js%2016-black?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/React%2019-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS_v4-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=prisma&logoColor=white" />
-  <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" />
+  <img src="https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Drizzle_ORM-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black" />
+  <img src="https://img.shields.io/badge/Upstash_Redis-00E599?style=for-the-badge&logo=redis&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  <img src="https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" />
 </div>
 
 ---
 
-### 🧠 Skills & Expertise
+### 🧠 Core Competencies & SaaS Engineering
 
-- **Frontend Architecture**: Scalable React patterns, Server-side rendering (SSR), Modern CSS-in-JS.
-- **Backend Engineering**: Type-safe REST & GraphQL APIs, Database modeling, Serverless functions.
-- **AI Integration**: Implementing Face Recognition, LLM orchestration (Ollama/Hugging Face), Prompt Engineering.
-- **Problem Solving**: Technical leadership, Performance optimization, User-centric product design.
+- **Multi-Tenant SaaS Architecture**: Designing isolated data models, wildcard custom apex domain routing, and subscription tier feature gating.
+- **Real-Time Event Systems**: Sub-second live data synchronization with Server-Sent Events (SSE) and Redis pub/sub.
+- **Type-Safe Data Layers**: High-performance database schemas with PostgreSQL (Neon Serverless), Drizzle ORM, and connection pooling.
+- **Asynchronous Pipelines**: Resilient background job processing using Inngest for bulk imports, transactional emails, and media transformations.
+- **Complex UI & Canvas Engines**: In-browser vector canvas design studios (Konva), touch-first PWAs with offline caching, and responsive design with Radix UI.
 
 ---
 
 ### 🚀 Featured Projects
 
-| Project | Description | Stack |
-| :--- | :--- | :--- |
-| **[Present AI](https://github.com/swabah/presentai)** | AI event photo distribution via Face Recognition. | Next.js, AI, OpenCV |
-| **[Royal Jet Travels](https://github.com/galamine/royaljet-travels)** | Premium travel platform with PWA & Cloudinary. | Next.js 16, Supabase |
-| **[Kryvo Store](https://github.com/kryvostore/kryvostore.in)** | High-performance Headless Shopify Storefront. | Next.js, Shopify API |
-| **[IMS](https://github.com/swabah/IMS)** | End-to-end Institution Management System. | TS, MongoDB, Node |
+| Project | Description | Stack | Live / Code |
+| :--- | :--- | :--- | :--- |
+| **[Greenroom](https://github.com/trizocommunity/greenroom)** 🏆 | **B2B2C Festival Management SaaS & Operating System** for ticketing, multi-stage scheduling, real-time judge scoring consoles, and automated poster generation. | Next.js 16, React 19, PostgreSQL (Neon), Upstash Redis, Drizzle ORM, Better Auth, Inngest, Razorpay, Tailwind v4 | [Live](https://trizo-greenroom.vercel.app) • [Code](https://github.com/trizocommunity/greenroom) |
+| **[Present AI](https://github.com/swabah/presentai)** | AI-powered event photo management & distribution platform matching attendee faces via Face Recognition across 50k+ photos. | Next.js, TypeScript, Face-api.js, AWS Rekognition, PostgreSQL, Redis | [Live](https://present-ai-psi.vercel.app) • [Code](https://github.com/swabah/presentai) |
+| **[Royal Jet Travels](https://github.com/galamine/royaljet-travels)** | Modern travel agency booking platform featuring offline PWA support and automated Cloudinary media pipelines. | Next.js 16, React 19, TypeScript, Tailwind v4, Supabase, Cloudinary | [Live](https://royaljet-travels.vercel.app) • [Code](https://github.com/galamine/royaljet-travels) |
+| **[IMS](https://github.com/swabah/IMS)** | Centralized Institution Management System with multi-role administrative workflows and record keeping. | Next.js, TypeScript, Tailwind CSS, PostgreSQL, Prisma ORM | [Live](https://ims-phi-three.vercel.app) • [Code](https://github.com/swabah/IMS) |
+| **[KRYVO Store](https://github.com/kryvostore/kryvostore.in)** | High-performance Headless E-Commerce Storefront integrated with Shopify Storefront API. | Next.js, React, Tailwind CSS, Shopify API | [Live](https://kryvostore.vercel.app) • [Code](https://github.com/kryvostore/kryvostore.in) |
 
 ---
 
 ### 💼 Experience
 
-| Role | Company | Period |
-| :--- | :--- | :--- |
-| **Full Stack Software Engineer** | upskillabs | Mar 2025 - Present |
-| **Co-Founder** | Luminexis | Jun 2025 - Present |
-| **Full Stack Software Engineer** | Galamine AI | Sep 2025 - Present |
-| **Web Developer** | Trizo Creatives | Sep 2023 - Present |
-| **Developer** | Amri Foundation | 2023 - 2024 |
+| Role | Company | Period | Location |
+| :--- | :--- | :--- | :--- |
+| **Co-Founder** | **Luminexis** | Jun 2025 – Present | Kozhikode, India · Hybrid |
+| **Full Stack Developer** | **Galamine AI** | Sep 2025 – Present | India · Remote |
+| **Web Developer** | **Trizo Creatives** | Sep 2023 – Oct 2026 | Kerala, India · Hybrid |
+| **Full Stack Developer** | **upskillabs** | Mar 2025 – Present | Kerala, India · Hybrid |
+| **Developer** | **Amri Foundation** | Jun 2023 – Jun 2024 | India · Remote |
 
 ---
 
-### 🎓 The Journey
+### 🎓 Education & Background
 
-| Period | Education | Institution |
+| Period | Program / Degree | Institution |
 | :--- | :--- | :--- |
-| **2023 - 2026** | **Bachelor of Computer Applications** | IGNOU |
-| **2022 - Present** | **Integrated Islamic Studies** | Ahlussuffa Integrated Studies, Kannur |
-| **2020 - 2022** | **Senior Islamic Studies** | Dalaelul Khairat, Malappuram |
-| **2020 - 2022** | **Higher Secondary** | DHHSS & GHSS Edappal |
+| **2022 – 2026** | **Bachelor of Computer Applications (BCA)** | Indira Gandhi National Open University (IGNOU) |
+| **2022 – Present** | **Integrated Islamic Studies** | Ahlussuffa Integrated Studies, Kannur |
+| **2020 – 2022** | **Senior Islamic Studies** | Dalaelul Khairat, Malappuram |
+| **2020 – 2022** | **Higher Secondary Education** | DHHSS & GHSS Edappal |
 
 ---
 
@@ -98,5 +101,6 @@ Beyond code, I am deeply involved in **Integrated Islamic Studies**, bringing a 
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
-  <p><strong>swabah.</strong></p>
+  <p><strong>Open to full-time software engineering roles, product innovation & ambitious SaaS builds.</strong></p>
+  <p><em>ahmedswabah.dev@email.com • <a href="https://swabah.vercel.app">swabah.vercel.app</a></em></p>
 </div>
