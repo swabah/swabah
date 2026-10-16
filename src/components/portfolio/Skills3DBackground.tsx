@@ -109,11 +109,11 @@ export const Skills3DBackground = () => {
 
     const keyLabels = [
       "Next.js", "React", "TypeScript", "Tailwind", "shadcn", "Framer", "Vite",
-      "Node.js", "Express", "Bun", "REST API", "Prisma",
-      "PostgreSQL", "MongoDB", "MySQL", "Supabase", "Firebase",
+      "Node.js", "Express", "Bun", "REST API", "Prisma", "Drizzle",
+      "PostgreSQL", "MongoDB", "MySQL", "Supabase", "Redis",
       "AI", "HuggingFace", "Ollama", "Prompt",
-      "AWS", "Docker", "Vercel", "Cloudinary", "CI/CD",
-      "Git", "GitHub", "VS Code", "Figma",
+      "AWS", "Docker", "Vercel", "Inngest", "Vitest", "CI/CD",
+      "Git", "GitHub", "VS Code", "Figma", "SaaS",
       "Space", "Enter", "Shift", "Ctrl", "</>", "=>"
     ];
     const keyCount = 35; // Keep the reduced density

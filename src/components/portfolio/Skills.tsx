@@ -5,28 +5,28 @@ import { AnimatedText } from "./AnimatedText";
 
 const groups = [
   {
-    title: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "TailwindCSS", "shadcn/ui", "Framer Motion", "Vite"],
+    title: "Frontend & UI",
+    items: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "shadcn/ui", "Radix UI", "Framer Motion", "Konva (Canvas)", "PWA"],
   },
   {
-    title: "Backend",
-    items: ["Node.js", "Express", "Bun", "REST APIs", "Prisma", "Server Actions"],
+    title: "Backend & Real-Time",
+    items: ["Node.js", "Express", "Bun", "REST APIs", "Server Actions", "Server-Sent Events (SSE)", "WebSockets", "Better Auth"],
   },
   {
-    title: "Databases",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Supabase", "Firebase"],
+    title: "Databases & Cache",
+    items: ["PostgreSQL (Neon)", "Upstash Redis", "Drizzle ORM", "Supabase", "MongoDB", "Prisma ORM"],
   },
   {
-    title: "AI / ML",
-    items: ["Hugging Face", "Ollama", "Prompt Engineering", "AI Integrations", "Face Recognition"],
+    title: "SaaS & Core Systems",
+    items: ["Multi-Tenancy", "Inngest (Job Queues)", "Razorpay", "Resend", "Cloudinary", "AWS S3", "Vercel CI/CD"],
   },
   {
-    title: "Cloud & DevOps",
-    items: ["AWS", "Docker", "Vercel", "Cloudinary", "CI/CD"],
+    title: "Testing & Tooling",
+    items: ["Vitest", "Docker", "Testcontainers", "Git", "GitHub", "Biome", "Postman", "Figma"],
   },
   {
-    title: "Tools",
-    items: ["Git", "GitHub", "VS Code", "Postman", "Figma"],
+    title: "AI & Intelligent Systems",
+    items: ["Face-api.js", "AWS Rekognition", "Hugging Face", "Ollama", "Prompt Engineering", "AI Integrations"],
   },
 ];
 
