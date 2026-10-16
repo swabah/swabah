@@ -44,7 +44,7 @@ export const Hero = () => {
 					</h1>
 
 					<div className="text-lg md:text-xl text-muted-foreground mb-4 font-medium overflow-hidden">
-						<AnimatedText text="Full Stack Software Engineer" delay={0.5} />
+						<AnimatedText text="Full Stack Software Engineer & SaaS Builder" delay={0.5} />
 					</div>
 
 					<motion.div

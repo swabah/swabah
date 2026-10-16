@@ -25,9 +25,10 @@ export const About = () => (
 				className="space-y-8"
 			>
 				<p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
-					As a Full Stack Software Engineer, I bridge the gap between complex
-					engineering and elegant design. I specialize in the modern JavaScript
-					ecosystem to build scalable, AI-powered applications that drive real
+					As a Full Stack Software Engineer and SaaS Builder, I bridge the gap between
+					robust systems engineering and high-velocity product delivery. I specialize in the modern
+					TypeScript ecosystem to architect scalable, multi-tenant SaaS platforms, real-time
+					event-driven architectures, and accessible, high-performance web applications that drive real
 					impact.
 				</p>
 

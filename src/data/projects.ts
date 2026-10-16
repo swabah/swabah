@@ -28,6 +28,54 @@ export type CaseStudy = {
 
 export const projects: Project[] = [
   {
+    slug: "greenroom",
+    name: "Greenroom",
+    description: "An end-to-end B2B2C SaaS platform that serves as a centralized operating system for festival organizers to manage ticketing, complex scheduling, team coordination, and payments.",
+    tech: ["Next.js 16", "React 19", "PostgreSQL", "Upstash Redis", "Drizzle ORM", "Better Auth", "Razorpay", "Inngest", "Tailwind v4"],
+    github: "https://github.com/trizocommunity/greenroom",
+    live: "https://trizo-greenroom.vercel.app",
+    featured: true,
+    caseStudy: {
+      overview: "Greenroom is an end-to-end B2B2C SaaS platform that serves as a centralized operating system for festival organizers to manage ticketing, complex scheduling, team coordination, and payments. It streamlines festival operations from pre-event registrations to real-time on-stage scoring, live leaderboards, and automated graphic poster generation.",
+      problem: "Festival management involves complex, fast-paced coordination across dozens of stages, hundreds of events, and thousands of participants. Traditional workflows rely on error-prone paper marksheets, disjointed spreadsheets, manual score tallying, and bottlenecked graphic design for winner announcements. Organizers require a single source of truth with real-time sync, resilient offline capabilities, and enterprise-grade multi-tenancy.",
+      solution: "Architected and engineered a comprehensive, production-grade festival management SaaS. Frontend: Built a highly interactive, accessible, and animated UI using Next.js 16, React 19, Tailwind CSS v4, and Radix UI. Backend & Data: Architected a scalable, type-safe data layer with PostgreSQL (Neon Serverless), Upstash Redis, and Drizzle ORM. Core Systems: Integrated Better Auth for secure role-based access, Razorpay for seamless financial transactions, and Inngest to orchestrate asynchronous background jobs (ticket generation, bulk emails via Resend). DevOps: Established robust CI/CD pipelines deploying to Vercel, with comprehensive testing via Vitest and localized staging using Docker.",
+      challenges: [
+        "Architecting a multi-tenant data layer with pooled Neon PostgreSQL connections and strict tenant isolation",
+        "Building a sub-second live scoring pipeline using Server-Sent Events (SSE) and Upstash Redis pub/sub",
+        "Developing an in-browser vector canvas design studio (Konva) with smart snap guides and automated data binding",
+        "Implementing offline-first PWA resilience with Serwist service workers for high-density venue auditoriums",
+        "Managing complex asynchronous workflows (ticket generation, bulk CSV onboarding, Cloudinary transformations) via Inngest queues",
+        "Enforcing role-based access control (RBAC) across Super Admin, Event Organizers, Stage Managers, and PIN-authenticated Judges"
+      ],
+      techStack: {
+        frontend: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Radix UI", "Framer Motion", "Konva", "Serwist (PWA)"],
+        backend: ["PostgreSQL (Neon Serverless)", "Drizzle ORM", "Upstash Redis", "Server-Sent Events (SSE)", "Better Auth"],
+        tools: ["Inngest", "Razorpay", "Resend", "Cloudinary", "Vercel", "Docker", "Vitest", "Biome"]
+      },
+      features: [
+        "Multi-tenant festival architecture with wildcard custom apex domain routing",
+        "Interactive, accessible, and animated UI with Next.js 16 and Tailwind CSS v4",
+        "Role-based access control with Better Auth (2FA, Email OTP) and judge PIN sessions",
+        "Real-time on-stage judge scoring console with blind evaluation lottery system",
+        "Live public scoreboards and leaderboards updated via Server-Sent Events (SSE)",
+        "In-browser vector poster and certificate design studio with automated winner data injection",
+        "Asynchronous background job orchestration with Inngest (bulk ticket generation, email queues)",
+        "Seamless financial checkout and tier subscriptions via Razorpay integration",
+        "Offline-ready PWA with QR code canteen and entry checkpoint verification"
+      ],
+      results: [
+        "Reduced festival result publication and scoring tally time from hours to under 5 seconds",
+        "Eliminated 100% of paper-based marksheets across multi-stage festival operations",
+        "Zero-downtime offline scoring resilience during live auditoriums and venue connectivity drops",
+        "Automated 1-click winner poster generation, eliminating design bottlenecks during live events",
+        "Scalable type-safe data layer handling 2,000+ competitors and 50+ stages per festival instance",
+        "Robust automated test coverage and streamlined CI/CD deploying to Vercel"
+      ],
+      timeline: "Production SaaS",
+      role: "Full Stack Engineer"
+    }
+  },
+  {
     slug: "present-ai",
     name: "Present AI",
     description: "AI-powered event asset management & discovery — distributes photos to guests via Face Recognition.",
@@ -254,50 +302,6 @@ export const projects: Project[] = [
         "95% reduction in manual paperwork"
       ],
       timeline: "3 months",
-      role: "Full Stack Software Engineer"
-    }
-  },
-  {
-    slug: "green-room",
-    name: "Green Room",
-    description: "Festival management system for events and crew coordination.",
-    tech: ["Next.js"],
-    github: "https://github.com/trizocommunity/greenroom",
-    live: "https://trizo-greenroom.vercel.app",
-    caseStudy: {
-      overview: "Green Room is a festival management system designed for event organizers and crew coordination. The platform manages event schedules, crew assignments, equipment tracking, and real-time communication between team members during festivals and live events.",
-      problem: "Festival management involves complex coordination between multiple teams, venues, and schedules. Manual coordination leads to miscommunications, missed cues, and logistical challenges. Crew members need real-time access to schedules and updates while event organizers need visibility into all operations.",
-      solution: "Developed a comprehensive festival management platform with real-time scheduling, crew assignment, and communication features. Built with Next.js for performance and integrated with WebSocket for real-time updates. The system provides mobile access for crew members and admin dashboards for organizers.",
-      challenges: [
-        "Building real-time communication for time-sensitive events",
-        "Creating flexible scheduling systems for complex festivals",
-        "Implementing offline access for areas with poor connectivity",
-        "Designing intuitive interfaces for non-technical crew members",
-        "Handling concurrent updates without conflicts"
-      ],
-      techStack: {
-        frontend: ["Next.js 14", "React 18", "Tailwind CSS"],
-        backend: ["Node.js", "Socket.io", "MongoDB"],
-        tools: ["Vercel", "MongoDB Atlas", "Pusher"]
-      },
-      features: [
-        "Real-time event scheduling and updates",
-        "Crew assignment and task management",
-        "Equipment tracking and inventory",
-        "Instant messaging and notifications",
-        "Mobile-responsive crew interface",
-        "Admin dashboard with analytics",
-        "Export schedules and reports",
-        "Offline mode for poor connectivity areas"
-      ],
-      results: [
-        "75% reduction in coordination errors",
-        "80% improvement in crew response time",
-        "Successfully managed 50+ events with 100+ crew members",
-        "99.5% system reliability during live events",
-        "60% reduction in setup time"
-      ],
-      timeline: "4 months",
       role: "Full Stack Software Engineer"
     }
   },
